@@ -1,0 +1,115 @@
+page-home {
+  ion-content {
+    // background: linear-gradient(
+    //   rgb(238, 238, 238) 300px,
+    //   rgb(255, 255, 255) 100%
+    // );
+    background: #2c3e50 !important;
+  }
+
+  // .content-bg {
+  //   background: linear-gradient(rgba(20, 67, 91, 0.8), rgba(20, 67, 91, 0.8)),
+  //     url('../../assets/imgs/bg.jpeg') !important;
+  //   background-size: cover !important;
+  //   background-position: right !important;
+  //   background-repeat: no-repeat !important;
+
+  //   // background: linear-gradient(rgba(20, 67, 91, 0.85), rgba(20, 67, 91, 0.85));
+  //   // background: #14435b !important;
+  //   // background: linear-gradient(to top, #14435b, #16222a);
+  // }
+
+  .heading {
+    margin: 30px 0 !important;
+
+    &__title {
+      color: #fefeff;
+      letter-spacing: 1.5px;
+      font-family: $font-heading;
+      // text-shadow: 1px 1px 1px rgba(16, 17, 24, 0.8);
+
+      span {
+        color: #4bbcf4;
+        font-weight: 300;
+      }
+    }
+
+    &__subtitle {
+      letter-spacing: 1px;
+      color: #e1e4e9;
+      font-family: $font-heading;
+      font-weight: 300;
+    }
+  }
+
+  p {
+    color: #b1b9c4;
+    font-weight: 600;
+    font-family: $font-body;
+    letter-spacing: 0.5px;
+  }
+
+  .list-md[inset] .item:first-child {
+    // background: rgba(46, 64, 88, 0.9);
+    // border-radius: 64px;
+    background: transparent;
+  }
+
+  .input-wrapper {
+    border-bottom: 1px solid rgba(177, 185, 196, 0.3);
+  }
+
+  .item-input ion-input {
+    // border: 1px solid rgba(42, 42, 42, 0.3);
+    // border-radius: 3px;
+    // background: #f0fbfe;
+  }
+
+  .button-md,
+  .button-ios {
+    font-family: $font-heading;
+    font-weight: 400;
+    letter-spacing: 1px;
+    // text-shadow: 1px 1px 1px rgba(16, 17, 24, 0.8);
+  }
+
+  .btn-link {
+    font-family: $font-body;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  ion-label {
+    font-size: 15px !important;
+    color: #1c5566 !important;
+    font-family: $font-heading;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  ion-input {
+    color: #b1b9c4;
+    font-family: $font-heading;
+    padding-left: 5px;
+
+    ::placeholder {
+      color: #b1b9c4 !important;
+      letter-spacing: 1px;
+    }
+  }
+
+  ion-icon {
+    font-size: 25px;
+    color: #b1b9c4;
+  }
+
+  .list-md .item-input.item-input-has-focus:last-child,
+  .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+}

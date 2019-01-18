@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-navbar hideBackButton color="background">
+    <!-- <ion-buttons float-left>
+      <button ion-button icon-only round>
+        <ion-icon name="ios-menu"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title float-left>
+      <span class="s-1">water</span>System
+      <span class="s-2">Tagoloan Water District</span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only round>
+        <ion-icon name="ios-search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-list>
+    <ion-item text-center>
+      <div class="avatar" margin-bottom>
+        <ion-thumbnail>
+          <img
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=adult-beard-boy-220453.jpg&fm=jpg"
+          />
+        </ion-thumbnail>
+      </div>
+      <h1>Michael Jumoc</h1>
+      <p>Employee</p>
+      <ion-grid margin-top>
+        <ion-row>
+          <ion-col
+            ><button
+              color="color-1"
+              ion-button
+              full
+              text-capitalize
+              class="btn-1"
+            >
+              My Account
+            </button></ion-col
+          >
+          <ion-col
+            ><button
+              color="color-2"
+              ion-button
+              full
+              text-capitalize
+              class="btn-2"
+            >
+              Check Settings
+            </button></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button ion-item (click)="zonePage()" class="item-1">
+            <ion-icon
+              class="icon-1"
+              name="ios-map"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Zone</h1>
+            <p margin-left>4 barangays</p>
+          </button>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <button ion-item (click)="postPage()" class="item-2">
+            <ion-icon
+              class="icon-2"
+              name="ios-document"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Post</h1>
+            <p margin-left>5 items</p>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button ion-item (click)="editPage()" class="item-3">
+            <ion-icon
+              class="icon-3"
+              name="ios-create"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Update</h1>
+            <p margin-left>Update post</p>
+          </button>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <button ion-item (click)="printPage()" class="item-4">
+            <ion-icon
+              class="icon-4"
+              name="ios-print"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Print</h1>
+            <p margin-left>Print post</p>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button ion-item class="item-5">
+            <ion-icon
+              class="icon-5"
+              name="ios-bluetooth"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Bluetooth</h1>
+            <p margin-left>Configure device</p>
+          </button>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <button ion-item class="item-6">
+            <ion-icon
+              class="icon-6"
+              name="ios-search"
+              margin-left
+              margin-bottom
+            ></ion-icon>
+            <h1 margin-left>Search</h1>
+            <p margin-left>Search post</p>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

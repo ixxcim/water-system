@@ -1,0 +1,66 @@
+<ion-content padding>
+  <div text-center margin-vertical class="heading">
+    <h1 class="heading__title">
+      <!-- <span class="heading__title--s1">Tagoloan</span> <br /> -->
+      <span>water</span>System
+    </h1>
+    <p text-capitalize class="heading__subtitle ">mobile billing application</p>
+  </div>
+
+  <div margin-top>
+    <ion-list inset>
+      <ion-item>
+        <ion-input type="text" placeholder="Username"></ion-input>
+        <ion-label margin-left
+          ><ion-icon name="ios-contact"></ion-icon
+        ></ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>
+      </ion-item>
+    </ion-list>
+    <button
+      class="btn-link"
+      ion-button
+      small
+      clear
+      float-right
+      margin-bottom
+      text-capitalize
+      color="link"
+    >
+      Forgot password?
+    </button>
+  </div>
+
+  <div padding-left padding-right>
+    <button
+      text-capitalize
+      ion-button
+      block
+      color="secondary-2"
+      (click)="loginUser()"
+    >
+      Log in
+    </button>
+    <p text-center>
+      New User?
+      <button
+        class="btn-link text-bold"
+        ion-button
+        small
+        clear
+        text-center
+        margin-bottom
+        text-capitalize
+        color="link"
+      >
+        Create account
+      </button>
+    </p>
+  </div>
+</ion-content>
