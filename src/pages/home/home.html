@@ -32,12 +32,13 @@
       margin-bottom
       text-capitalize
       color="link"
+      (click)="checkSettings()"
     >
-      Forgot password?
+      Check settings
     </button>
   </div>
 
-  <div padding-left padding-right>
+  <div padding-left padding-right text-center>
     <button
       text-capitalize
       ion-button
@@ -47,20 +48,5 @@
     >
       Log in
     </button>
-    <p text-center>
-      New User?
-      <button
-        class="btn-link text-bold"
-        ion-button
-        small
-        clear
-        text-center
-        margin-bottom
-        text-capitalize
-        color="link"
-      >
-        Create account
-      </button>
-    </p>
   </div>
 </ion-content>

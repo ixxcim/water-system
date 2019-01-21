@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Generated class for the ZonePage page.
@@ -11,15 +12,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-zone',
-  templateUrl: 'zone.html',
+  templateUrl: 'zone.html'
 })
 export class ZonePage {
+  data: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public httpClient: HttpClient
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ZonePage');
+    this.displayData();
   }
 
+  displayData() {
+    let url = 'http://localhost/mj/index.php/jumoc/display';
+    this.httpClient.get(url).subscribe(data => {
+      this.data = data[0];
+      console.log(data[0]);
+    });
+  }
 }

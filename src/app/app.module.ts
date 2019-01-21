@@ -12,6 +12,7 @@ import { ZonePage } from '../pages/zone/zone';
 import { PostPage } from '../pages/post/post';
 import { EditPage } from '../pages/edit/edit';
 import { PrintPage } from '../pages/print/print';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { PrinterProvider } from './../providers/printer/printer';
 
@@ -23,7 +24,8 @@ import { PrinterProvider } from './../providers/printer/printer';
     ZonePage,
     PostPage,
     EditPage,
-    PrintPage
+    PrintPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { PrinterProvider } from './../providers/printer/printer';
     ZonePage,
     PostPage,
     EditPage,
-    PrintPage
+    PrintPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

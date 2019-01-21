@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -19,5 +20,9 @@ export class HomePage {
       duration: 3000
     });
     loader.present();
+  }
+
+  checkSettings() {
+    this.navCtrl.push(SettingsPage);
   }
 }
