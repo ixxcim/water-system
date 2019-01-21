@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,9 +13,9 @@ import { ZonePage } from '../pages/zone/zone';
 import { PostPage } from '../pages/post/post';
 import { EditPage } from '../pages/edit/edit';
 import { PrintPage } from '../pages/print/print';
-import { SettingsPage } from '../pages/settings/settings';
 
 import { PrinterProvider } from './../providers/printer/printer';
+import { AuthenticationProvider } from './../providers/auth-provider/authentication';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,15 @@ import { PrinterProvider } from './../providers/printer/printer';
     ZonePage,
     PostPage,
     EditPage,
-    PrintPage,
-    SettingsPage
+    PrintPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       scrollAssist: false,
       autoFocusAssist: false
-    })
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,15 +43,15 @@ import { PrinterProvider } from './../providers/printer/printer';
     ZonePage,
     PostPage,
     EditPage,
-    PrintPage,
-    SettingsPage
+    PrintPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     BluetoothSerial,
-    PrinterProvider
+    PrinterProvider,
+    AuthenticationProvider
   ]
 })
 export class AppModule {}
