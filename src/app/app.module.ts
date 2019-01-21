@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -11,6 +12,8 @@ import { ZonePage } from '../pages/zone/zone';
 import { PostPage } from '../pages/post/post';
 import { EditPage } from '../pages/edit/edit';
 import { PrintPage } from '../pages/print/print';
+
+import { PrinterProvider } from './../providers/printer/printer';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { PrintPage } from '../pages/print/print';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    BluetoothSerial,
+    PrinterProvider
   ]
 })
 export class AppModule {}

@@ -34,7 +34,7 @@ var PostPage = /** @class */ (function () {
     };
     PostPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-post',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\post\post.html"*/'<!--\n  Generated template for the PostPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n</ion-header>\n\n<ion-content padding> </ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\post\post.html"*/,
+            selector: 'page-post',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\post\post.html"*/'<!--\n\n  Generated template for the PostPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\post\post.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], PostPage);
@@ -46,45 +46,7 @@ var PostPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 101:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrintPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the PrintPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PrintPage = /** @class */ (function () {
-    function PrintPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    PrintPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PrintPage');
-    };
-    PrintPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-print',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\print\print.html"*/'<!--\n  Generated template for the PrintPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background"> <ion-title>Print</ion-title> </ion-navbar>\n</ion-header>\n\n<ion-content padding> </ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\print\print.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], PrintPage);
-    return PrintPage;
-}());
+/***/ (function(module, exports) {
 
 //# sourceMappingURL=print.js.map
 
@@ -124,7 +86,7 @@ var ZonePage = /** @class */ (function () {
     };
     ZonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-zone',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\zone\zone.html"*/'<ion-header>\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item>\n      <h2>Barangay 26</h2>\n      <p>Lapasan</p>\n      <ion-icon\n        name="ios-arrow-forward"\n        item-end\n        large\n        isActive="false"\n      ></ion-icon>\n    </button>\n    <button ion-item>\n      <h2>Barangay 26</h2>\n      <p>Lapasan</p>\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n    </button>\n    <button ion-item>\n      <h2>Barangay 26</h2>\n      <p>Lapasan</p>\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n    </button>\n    <button ion-item>\n      <h2>Barangay 26</h2>\n      <p>Lapasan</p>\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n    </button>\n  </ion-list>\n  <!-- <ion-card>\n    <ion-card-content>\n      <button ion-item>\n        <h2>Barangay 26</h2>\n        <p>Lapasan</p>\n      </button>\n    </ion-card-content>\n  </ion-card> -->\n</ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\zone\zone.html"*/,
+            selector: 'page-zone',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n        large\n\n        isActive="false"\n\n      ></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n  <!-- <ion-card>\n\n    <ion-card-content>\n\n      <button ion-item>\n\n        <h2>Barangay 26</h2>\n\n        <p>Lapasan</p>\n\n      </button>\n\n    </ion-card-content>\n\n  </ion-card> -->\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\zone\zone.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], ZonePage);
@@ -146,6 +108,7 @@ var ZonePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_post__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_edit__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__print_print__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__print_print___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__print_print__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -186,11 +149,11 @@ var MenuPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__edit_edit__["a" /* EditPage */]);
     };
     MenuPage.prototype.printPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__print_print__["a" /* PrintPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__print_print__["PrintPage"]);
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\menu\menu.html"*/'<ion-header>\n  <ion-navbar hideBackButton color="background">\n    <!-- <ion-buttons float-left>\n      <button ion-button icon-only round>\n        <ion-icon name="ios-menu"></ion-icon>\n      </button>\n    </ion-buttons> -->\n    <ion-title float-left>\n      <span class="s-1">water</span>System\n      <span class="s-2">Tagoloan Water District</span>\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only round>\n        <ion-icon name="ios-search"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <!-- <ion-list>\n    <ion-item text-center>\n      <div class="avatar" margin-bottom>\n        <ion-thumbnail>\n          <img\n            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=adult-beard-boy-220453.jpg&fm=jpg"\n          />\n        </ion-thumbnail>\n      </div>\n      <h1>Michael Jumoc</h1>\n      <p>Employee</p>\n      <ion-grid margin-top>\n        <ion-row>\n          <ion-col\n            ><button\n              color="color-1"\n              ion-button\n              full\n              text-capitalize\n              class="btn-1"\n            >\n              My Account\n            </button></ion-col\n          >\n          <ion-col\n            ><button\n              color="color-2"\n              ion-button\n              full\n              text-capitalize\n              class="btn-2"\n            >\n              Check Settings\n            </button></ion-col\n          >\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list> -->\n\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n          <button ion-item (click)="zonePage()" class="item-1">\n            <ion-icon\n              class="icon-1"\n              name="ios-map"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Zone</h1>\n            <p margin-left>4 barangays</p>\n          </button>\n        </ion-list>\n      </ion-col>\n      <ion-col>\n        <ion-list>\n          <button ion-item (click)="postPage()" class="item-2">\n            <ion-icon\n              class="icon-2"\n              name="ios-document"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Post</h1>\n            <p margin-left>5 items</p>\n          </button>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n          <button ion-item (click)="editPage()" class="item-3">\n            <ion-icon\n              class="icon-3"\n              name="ios-create"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Update</h1>\n            <p margin-left>Update post</p>\n          </button>\n        </ion-list>\n      </ion-col>\n      <ion-col>\n        <ion-list>\n          <button ion-item (click)="printPage()" class="item-4">\n            <ion-icon\n              class="icon-4"\n              name="ios-print"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Print</h1>\n            <p margin-left>Print post</p>\n          </button>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n          <button ion-item class="item-5">\n            <ion-icon\n              class="icon-5"\n              name="ios-bluetooth"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Bluetooth</h1>\n            <p margin-left>Configure device</p>\n          </button>\n        </ion-list>\n      </ion-col>\n      <ion-col>\n        <ion-list>\n          <button ion-item class="item-6">\n            <ion-icon\n              class="icon-6"\n              name="ios-search"\n              margin-left\n              margin-bottom\n            ></ion-icon>\n            <h1 margin-left>Search</h1>\n            <p margin-left>Search post</p>\n          </button>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\menu\menu.html"*/
+            selector: 'page-menu',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton color="background">\n\n    <!-- <ion-buttons float-left>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-menu"></ion-icon>\n\n      </button>\n\n    </ion-buttons> -->\n\n    <ion-title float-left>\n\n      <span class="s-1">water</span>System\n\n      <span class="s-2">Tagoloan Water District</span>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-list>\n\n    <ion-item text-center>\n\n      <div class="avatar" margin-bottom>\n\n        <ion-thumbnail>\n\n          <img\n\n            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=adult-beard-boy-220453.jpg&fm=jpg"\n\n          />\n\n        </ion-thumbnail>\n\n      </div>\n\n      <h1>Michael Jumoc</h1>\n\n      <p>Employee</p>\n\n      <ion-grid margin-top>\n\n        <ion-row>\n\n          <ion-col\n\n            ><button\n\n              color="color-1"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-1"\n\n            >\n\n              My Account\n\n            </button></ion-col\n\n          >\n\n          <ion-col\n\n            ><button\n\n              color="color-2"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-2"\n\n            >\n\n              Check Settings\n\n            </button></ion-col\n\n          >\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-item>\n\n  </ion-list> -->\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="zonePage()" class="item-1">\n\n            <ion-icon\n\n              class="icon-1"\n\n              name="ios-map"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Zone</h1>\n\n            <p margin-left>4 barangays</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="postPage()" class="item-2">\n\n            <ion-icon\n\n              class="icon-2"\n\n              name="ios-document"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Post</h1>\n\n            <p margin-left>5 items</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="editPage()" class="item-3">\n\n            <ion-icon\n\n              class="icon-3"\n\n              name="ios-create"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Update</h1>\n\n            <p margin-left>Update post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="printPage()" class="item-4">\n\n            <ion-icon\n\n              class="icon-4"\n\n              name="ios-print"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Print</h1>\n\n            <p margin-left>Print post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-5">\n\n            <ion-icon\n\n              class="icon-5"\n\n              name="ios-bluetooth"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Bluetooth</h1>\n\n            <p margin-left>Configure device</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-6">\n\n            <ion-icon\n\n              class="icon-6"\n\n              name="ios-search"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Search</h1>\n\n            <p margin-left>Search post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\menu\menu.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], MenuPage);
@@ -224,23 +187,19 @@ webpackEmptyAsyncContext.id = 113;
 var map = {
 	"../pages/edit/edit.module": [
 		273,
-		4
+		10
 	],
 	"../pages/menu/menu.module": [
 		277,
-		3
+		9
 	],
 	"../pages/post/post.module": [
 		274,
-		2
-	],
-	"../pages/print/print.module": [
-		275,
-		1
+		8
 	],
 	"../pages/zone/zone.module": [
 		276,
-		0
+		7
 	]
 };
 function webpackAsyncContext(req) {
@@ -294,7 +253,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\home\home.html"*/'<ion-content padding>\n  <div text-center margin-vertical class="heading">\n    <h1 class="heading__title">\n      <!-- <span class="heading__title--s1">Tagoloan</span> <br /> -->\n      <span>water</span>System\n    </h1>\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n  </div>\n\n  <div margin-top>\n    <ion-list inset>\n      <ion-item>\n        <ion-input type="text" placeholder="Username"></ion-input>\n        <ion-label margin-left\n          ><ion-icon name="ios-contact"></ion-icon\n        ></ion-label>\n      </ion-item>\n    </ion-list>\n\n    <ion-list inset>\n      <ion-item>\n        <ion-input type="password" placeholder="Password"></ion-input>\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n      </ion-item>\n    </ion-list>\n    <button\n      class="btn-link"\n      ion-button\n      small\n      clear\n      float-right\n      margin-bottom\n      text-capitalize\n      color="link"\n    >\n      Forgot password?\n    </button>\n  </div>\n\n  <div padding-left padding-right>\n    <button\n      text-capitalize\n      ion-button\n      block\n      color="secondary-2"\n      (click)="loginUser()"\n    >\n      Log in\n    </button>\n    <p text-center>\n      New User?\n      <button\n        class="btn-link text-bold"\n        ion-button\n        small\n        clear\n        text-center\n        margin-bottom\n        text-capitalize\n        color="link"\n      >\n        Create account\n      </button>\n    </p>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title">\n\n      <!-- <span class="heading__title--s1">Tagoloan</span> <br /> -->\n\n      <span>water</span>System\n\n    </h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n    >\n\n      Forgot password?\n\n    </button>\n\n  </div>\n\n\n\n  <div padding-left padding-right>\n\n    <button\n\n      text-capitalize\n\n      ion-button\n\n      block\n\n      color="secondary-2"\n\n      (click)="loginUser()"\n\n    >\n\n      Log in\n\n    </button>\n\n    <p text-center>\n\n      New User?\n\n      <button\n\n        class="btn-link text-bold"\n\n        ion-button\n\n        small\n\n        clear\n\n        text-center\n\n        margin-bottom\n\n        text-capitalize\n\n        color="link"\n\n      >\n\n        Create account\n\n      </button>\n\n    </p>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
@@ -328,15 +287,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_zone_zone__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_post_post__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_edit_edit__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_print_print__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_zone_zone__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_post_post__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_edit_edit__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_print_print__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_print_print___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__pages_print_print__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_printer_printer__ = __webpack_require__(278);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -355,30 +317,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_zone_zone__["a" /* ZonePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_post_post__["a" /* PostPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_edit_edit__["a" /* EditPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_print_print__["a" /* PrintPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_zone_zone__["a" /* ZonePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_post_post__["a" /* PostPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_edit_edit__["a" /* EditPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_print_print__["PrintPage"]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {
                     scrollAssist: false,
                     autoFocusAssist: false
                 }, {
                     links: [
                         { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'post', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/print/print.module#PrintPageModule', name: 'PrintPage', segment: 'print', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/zone/zone.module#ZonePageModule', name: 'ZonePage', segment: 'zone', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] }
                     ]
@@ -386,18 +349,20 @@ var AppModule = /** @class */ (function () {
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_zone_zone__["a" /* ZonePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_post_post__["a" /* PostPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_edit_edit__["a" /* EditPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_print_print__["a" /* PrintPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_zone_zone__["a" /* ZonePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_post_post__["a" /* PostPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_edit_edit__["a" /* EditPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_print_print__["PrintPage"]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */],
+                __WEBPACK_IMPORTED_MODULE_13__providers_printer_printer__["a" /* PrinterProvider */]
             ]
         })
     ], AppModule);
@@ -453,7 +418,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -463,6 +428,55 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 278:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrinterProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PrinterProvider = /** @class */ (function () {
+    function PrinterProvider(bluetoothSerial) {
+        this.bluetoothSerial = bluetoothSerial;
+    }
+    PrinterProvider.prototype.enableBluetooth = function () {
+        return this.bluetoothSerial.enable();
+    };
+    PrinterProvider.prototype.searchBluetooth = function () {
+        return this.bluetoothSerial.list();
+    };
+    PrinterProvider.prototype.connectBluetooth = function (address) {
+        return this.bluetoothSerial.connect(address);
+    };
+    PrinterProvider.prototype.printData = function (data) {
+        return this.bluetoothSerial.write(data);
+    };
+    PrinterProvider.prototype.disconnectBluetooth = function () {
+        return this.bluetoothSerial.disconnect();
+    };
+    PrinterProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */]) === "function" && _a || Object])
+    ], PrinterProvider);
+    return PrinterProvider;
+    var _a;
+}());
+
+//# sourceMappingURL=printer.js.map
 
 /***/ }),
 
@@ -500,7 +514,7 @@ var EditPage = /** @class */ (function () {
     };
     EditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit',template:/*ion-inline-start:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\edit\edit.html"*/'<!--\n  Generated template for the EditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background"> <ion-title>Edit</ion-title> </ion-navbar>\n</ion-header>\n\n<ion-content padding> </ion-content>\n'/*ion-inline-end:"C:\Users\Windows 10\Desktop\WBSv3\src\pages\edit\edit.html"*/,
+            selector: 'page-edit',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\edit\edit.html"*/'<!--\n\n  Generated template for the EditPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Edit</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\edit\edit.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], EditPage);
