@@ -56194,10 +56194,6 @@ page-zone ion-title {
   font-family: "Poppins", sans-serif;
 }
 
-page-zone ion-content {
-  background: #f4f4f4 !important;
-}
-
 page-zone h2 {
   font-family: "Poppins", sans-serif;
 }
@@ -56206,25 +56202,9 @@ page-zone p {
   font-family: "Open Sans", sans-serif;
 }
 
-page-zone .list-md[inset],
-page-zone .list-ios[inset] {
-  margin-top: 0 !important;
-}
-
 page-zone .item-md ion-icon[item-end],
 page-zone .item-ios ion-icon[item-end] {
   color: #95a5a6 !important;
-}
-
-page-zone .card-content-md,
-page-zone .card-content-ios {
-  /* padding: 13px 16px; */
-  padding: 0 !important;
-}
-
-page-zone .label-md,
-page-zone .label-ios {
-  margin: 0 !important;
 }
 
 page-zone .item-md,
@@ -56232,6 +56212,67 @@ page-zone .item-ios {
   padding-left: 0 !important;
 }
 
-page-zone .item-md.item-block .item-inner {
-  padding: 13px 16px;
+page-zone-details ion-title {
+  font-family: "Poppins", sans-serif;
+}
+
+page-zone-details h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+page-zone-details p {
+  font-family: "Open Sans", sans-serif;
+}
+
+page-zone-details .item-md ion-icon[item-end],
+page-zone-details .item-ios ion-icon[item-end] {
+  color: #95a5a6 !important;
+}
+
+page-zone-details .searchbar-md,
+page-zone-details .searchbar-ios {
+  background: #2c3e50 !important;
+}
+
+page-zone-user ion-title {
+  font-family: "Poppins", sans-serif;
+}
+
+page-zone-user h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+page-zone-user p {
+  font-family: "Open Sans", sans-serif;
+}
+
+page-zone-user .button-md,
+page-zone-user .button-ios {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+page-zone-user ion-label {
+  font-size: 15px !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+page-zone-user ion-input {
+  font-family: "Poppins", sans-serif;
+  padding-left: 5px;
+}
+
+page-zone-user ion-input ::-webkit-input-placeholder {
+  letter-spacing: 1px;
+}
+
+page-zone-user ion-input ::-ms-input-placeholder {
+  letter-spacing: 1px;
+}
+
+page-zone-user ion-input ::placeholder {
+  letter-spacing: 1px;
 }

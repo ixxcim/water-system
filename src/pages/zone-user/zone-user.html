@@ -1,0 +1,39 @@
+<!--
+  Generated template for the ZoneUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="background">
+    <ion-title>{{ user.fname }} {{ user.lname }} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-right>
+  <ion-list>
+    <ion-item *ngIf="!user.measure">
+      <ion-icon name="sad" item-start></ion-icon>
+      <h2>No data available</h2>
+      <p>Please contact to our office</p>
+    </ion-item>
+
+    <ion-item *ngIf="user.measure">
+      <ion-avatar item-start>
+        <img src="./../../assets/imgs/logo1.png" />
+      </ion-avatar>
+      <h2>{{ user.month }}</h2>
+      <h3>{{ user.measure }}</h3>
+      <p>500</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pay</ion-label>
+      <ion-input type="number" [(ngModel)]="data.title" name="pay"></ion-input>
+    </ion-item>
+
+    <button ion-button color="primary-1" float-right margin-top text-capitalize>
+      read meter
+    </button>
+  </ion-list>
+</ion-content>

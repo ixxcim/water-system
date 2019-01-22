@@ -1,0 +1,36 @@
+page-zone-user {
+  ion-title {
+    font-family: $font-heading;
+  }
+
+  h2 {
+    font-family: $font-heading;
+  }
+
+  p {
+    font-family: $font-body;
+  }
+
+  .button-md,
+  .button-ios {
+    font-family: $font-heading;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  ion-label {
+    font-size: 15px !important;
+    font-family: $font-heading;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  ion-input {
+    font-family: $font-heading;
+    padding-left: 5px;
+
+    ::placeholder {
+      letter-spacing: 1px;
+    }
+  }
+}

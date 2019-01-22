@@ -3,10 +3,6 @@ page-zone {
     font-family: $font-heading;
   }
 
-  ion-content {
-    background: #f4f4f4 !important;
-  }
-
   ion-card {
     // border-radius: 64px !important;
   }
@@ -19,41 +15,33 @@ page-zone {
     font-family: $font-body;
   }
 
-  .list-md[inset],
-  .list-ios[inset] {
-    margin-top: 0 !important;
-  }
+  // .list-md[inset],
+  // .list-ios[inset] {
+  //   margin-top: 0 !important;
+  // }
 
   .item-md ion-icon[item-end],
   .item-ios ion-icon[item-end] {
     color: #95a5a6 !important;
   }
 
-  // .item-md,
-  // .item-ios {
-  //   padding-left: 0 !important;
-  //   margin-bottom: 15px !important;
-  //   background: #ecf0f1;
-  //   border: 0 !important;
-  //   border-radius: 3px;
+
+  // .card-content-md,
+  // .card-content-ios {
+  //   /* padding: 13px 16px; */
+  //   padding: 0 !important;
   // }
 
-  .card-content-md,
-  .card-content-ios {
-    /* padding: 13px 16px; */
-    padding: 0 !important;
-  }
-
-  .label-md,
-  .label-ios {
-    margin: 0 !important;
-  }
+  // .label-md,
+  // .label-ios {
+  //   margin: 0 !important;
+  // }
 
   .item-md,
   .item-ios {
     padding-left: 0 !important;
   }
-  .item-md.item-block .item-inner {
-    padding: 13px 16px;
-  }
+  // .item-md.item-block .item-inner {
+  //   padding: 13px 16px;
+  // }
 }

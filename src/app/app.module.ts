@@ -5,11 +5,16 @@ import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from './../pages/home/home';
 import { MenuPage } from './../pages/menu/menu';
+
 import { ZonePage } from './../pages/zone/zone';
+import { ZoneDetailsPage } from './../pages/zone-details/zone-details';
+import { ZoneUserPage } from './../pages/zone-user/zone-user';
+
 import { PostPage } from './../pages/post/post';
 import { EditPage } from './../pages/edit/edit';
 import { PrintPage } from './../pages/print/print';
@@ -25,12 +30,15 @@ import { FunctionsProvider } from './../providers/functions/functions';
     HomePage,
     MenuPage,
     ZonePage,
+    ZoneDetailsPage,
+    ZoneUserPage,
     PostPage,
     EditPage,
     PrintPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp, {
       scrollAssist: false,
       autoFocusAssist: false
@@ -43,6 +51,8 @@ import { FunctionsProvider } from './../providers/functions/functions';
     HomePage,
     MenuPage,
     ZonePage,
+    ZoneDetailsPage,
+    ZoneUserPage,
     PostPage,
     EditPage,
     PrintPage

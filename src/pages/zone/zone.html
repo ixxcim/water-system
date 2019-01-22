@@ -3,31 +3,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item>
-      <h2>Barangay 26</h2>
-      <p>Lapasan</p>
+  <ion-list  inset>
+    <button ion-item *ngFor="let items of item" (click)="getData(items)">
+      <h2> {{ items }}</h2>
       <ion-icon
         name="ios-arrow-forward"
         item-end
-        large
-        isActive="false"
       ></ion-icon>
-    </button>
-    <button ion-item>
-      <h2>Barangay 26</h2>
-      <p>Lapasan</p>
-      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>
-    </button>
-    <button ion-item>
-      <h2>Barangay 26</h2>
-      <p>Lapasan</p>
-      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>
-    </button>
-    <button ion-item>
-      <h2>Barangay 26</h2>
-      <p>Lapasan</p>
-      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>
     </button>
   </ion-list>
 </ion-content>
