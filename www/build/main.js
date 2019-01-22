@@ -52,7 +52,6 @@ var EditPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZonePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,7 +63,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /**
  * Generated class for the ZonePage page.
  *
@@ -72,31 +70,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ZonePage = /** @class */ (function () {
-    function ZonePage(navCtrl, navParams, httpClient) {
+    function ZonePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.httpClient = httpClient;
     }
-    ZonePage.prototype.ionViewDidLoad = function () {
-        this.displayData();
-    };
-    ZonePage.prototype.displayData = function () {
-        var _this = this;
-        var url = 'http://localhost/mj/index.php/jumoc/display';
-        this.httpClient.get(url).subscribe(function (data) {
-            _this.data = data[0];
-            console.log(data[0]);
-        });
-    };
+    ZonePage.prototype.ionViewDidLoad = function () { };
     ZonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-zone',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n        large\n\n        isActive="false"\n\n      ></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\zone\zone.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
     ], ZonePage);
     return ZonePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=zone.js.map
@@ -511,6 +497,7 @@ var PrinterProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -520,6 +507,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -533,16 +521,17 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.checkSettings = function () {
         this.storage.setLocalStorage();
     };
+    HomePage.prototype.logForm = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__menu_menu__["a" /* MenuPage */]);
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title"><span>water</span>System</h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n      (click)="checkSettings()"\n\n    >\n\n      Change Settings\n\n    </button>\n\n    <div padding-left padding-right text-center>\n\n      <button\n\n        text-capitalize\n\n        ion-button\n\n        block\n\n        color="secondary-2"\n\n        (click)="logForm()"\n\n      >\n\n        Log in\n\n      </button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]) === "function" && _d || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -594,7 +583,6 @@ var MenuPage = /** @class */ (function () {
     };
     MenuPage.prototype.zonePage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__zone_zone__["a" /* ZonePage */]);
-        console.log(123);
     };
     MenuPage.prototype.postPage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__post_post__["a" /* PostPage */]);
@@ -609,11 +597,10 @@ var MenuPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-menu',template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton color="background">\n\n    <!-- <ion-buttons float-left>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-menu"></ion-icon>\n\n      </button>\n\n    </ion-buttons> -->\n\n    <ion-title float-left>\n\n      <span class="s-1">water</span>System\n\n      <span class="s-2">Tagoloan Water District</span>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <!-- <ion-list>\n\n    <ion-item text-center>\n\n      <div class="avatar" margin-bottom>\n\n        <ion-thumbnail>\n\n          <img\n\n            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=adult-beard-boy-220453.jpg&fm=jpg"\n\n          />\n\n        </ion-thumbnail>\n\n      </div>\n\n      <h1>Michael Jumoc</h1>\n\n      <p>Employee</p>\n\n      <ion-grid margin-top>\n\n        <ion-row>\n\n          <ion-col\n\n            ><button\n\n              color="color-1"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-1"\n\n            >\n\n              My Account\n\n            </button></ion-col\n\n          >\n\n          <ion-col\n\n            ><button\n\n              color="color-2"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-2"\n\n            >\n\n              Check Settings\n\n            </button></ion-col\n\n          >\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-item>\n\n  </ion-list> -->\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="zonePage()" class="item-1">\n\n            <ion-icon\n\n              class="icon-1"\n\n              name="ios-map"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Zone</h1>\n\n            <p margin-left>4 barangays</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="postPage()" class="item-2">\n\n            <ion-icon\n\n              class="icon-2"\n\n              name="ios-document"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Post</h1>\n\n            <p margin-left>5 items</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="editPage()" class="item-3">\n\n            <ion-icon\n\n              class="icon-3"\n\n              name="ios-create"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Update</h1>\n\n            <p margin-left>Update post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="printPage()" class="item-4">\n\n            <ion-icon\n\n              class="icon-4"\n\n              name="ios-print"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Print</h1>\n\n            <p margin-left>Print post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-5">\n\n            <ion-icon\n\n              class="icon-5"\n\n              name="ios-bluetooth"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Bluetooth</h1>\n\n            <p margin-left>Configure device</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-6">\n\n            <ion-icon\n\n              class="icon-6"\n\n              name="ios-search"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Search</h1>\n\n            <p margin-left>Search post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\pages\menu\menu.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__["a" /* StorageProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__["a" /* StorageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__["a" /* StorageProvider */]) === "function" && _c || Object])
     ], MenuPage);
     return MenuPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=menu.js.map
@@ -892,11 +879,10 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"c:\Users\Windows 10\Desktop\water-system\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"c:\Users\Windows 10\Desktop\water-system\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map

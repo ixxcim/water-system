@@ -7,12 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { MenuPage } from '../pages/menu/menu';
-import { ZonePage } from '../pages/zone/zone';
-import { PostPage } from '../pages/post/post';
-import { EditPage } from '../pages/edit/edit';
-import { PrintPage } from '../pages/print/print';
+import { HomePage } from './../pages/home/home';
+import { MenuPage } from './../pages/menu/menu';
+import { ZonePage } from './../pages/zone/zone';
+import { PostPage } from './../pages/post/post';
+import { EditPage } from './../pages/edit/edit';
+import { PrintPage } from './../pages/print/print';
 
 import { PrinterProvider } from './../providers/printer/printer';
 import { AuthenticationProvider } from './../providers/auth-provider/authentication';

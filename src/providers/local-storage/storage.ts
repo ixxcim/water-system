@@ -4,6 +4,8 @@ import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class StorageProvider {
+  data: any;
+
   constructor(public alertCtrl: AlertController, private storage: Storage) {}
 
   setLocalStorage() {
@@ -38,7 +40,8 @@ export class StorageProvider {
 
   getLocalStorage() {
     return this.storage.get('ipaddress').then(name => {
-      console.log('Your name is', name);
+      this.data = name;
+      console.log(name);
     });
   }
 }

@@ -4,8 +4,8 @@ import {
   LoadingController,
   AlertController
 } from 'ionic-angular';
-import { StorageProvider } from '../../providers/local-storage/storage';
-import { MenuPage } from '../menu/menu';
+import { StorageProvider } from './../../providers/local-storage/storage';
+import { MenuPage } from './../menu/menu';
 
 @Component({
   selector: 'page-home',

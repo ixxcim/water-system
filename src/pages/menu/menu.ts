@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ZonePage } from '../zone/zone';
-import { PostPage } from '../post/post';
-import { EditPage } from '../edit/edit';
-import { PrintPage } from '../print/print';
-import { StorageProvider } from '../../providers/local-storage/storage';
+import { ZonePage } from './../zone/zone';
+import { PostPage } from './../post/post';
+import { EditPage } from './../edit/edit';
+import { PrintPage } from './../print/print';
+import { StorageProvider } from './../../providers/local-storage/storage';
 
 /**
  * Generated class for the MenuPage page.
@@ -31,7 +31,6 @@ export class MenuPage {
 
   zonePage() {
     this.navCtrl.push(ZonePage);
-    console.log(123);
   }
 
   postPage() {
