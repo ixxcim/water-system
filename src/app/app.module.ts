@@ -16,6 +16,8 @@ import { PrintPage } from '../pages/print/print';
 
 import { PrinterProvider } from './../providers/printer/printer';
 import { AuthenticationProvider } from './../providers/auth-provider/authentication';
+import { StorageProvider } from './../providers/local-storage/storage';
+import { FunctionsProvider } from './../providers/functions/functions';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { AuthenticationProvider } from './../providers/auth-provider/authenticat
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     BluetoothSerial,
     PrinterProvider,
-    AuthenticationProvider
+    AuthenticationProvider,
+    StorageProvider,
+    FunctionsProvider
   ]
 })
 export class AppModule {}

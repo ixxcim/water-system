@@ -1,26 +1,24 @@
 <ion-content padding>
   <div text-center margin-vertical class="heading">
-    <h1 class="heading__title">
-      <span>water</span>System
-    </h1>
+    <h1 class="heading__title"><span>water</span>System</h1>
     <p text-capitalize class="heading__subtitle ">mobile billing application</p>
   </div>
 
   <div margin-top>
     <ion-list inset>
-        <ion-item>
-          <ion-input type="text" placeholder="Username"></ion-input>
-          <ion-label margin-left
-            ><ion-icon name="ios-contact"></ion-icon
-          ></ion-label>
-        </ion-item>
-      </ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="Username"></ion-input>
+        <ion-label margin-left
+          ><ion-icon name="ios-contact"></ion-icon
+        ></ion-label>
+      </ion-item>
+    </ion-list>
 
-      <ion-list inset>
-        <ion-item>
-          <ion-input type="password" placeholder="Password"></ion-input>
-          <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>
-        </ion-item>
+    <ion-list inset>
+      <ion-item>
+        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>
+      </ion-item>
     </ion-list>
 
     <button
@@ -37,16 +35,15 @@
       Change Settings
     </button>
     <div padding-left padding-right text-center>
-        <button
-          text-capitalize
-          ion-button
-          block
-          color="secondary-2"
-          type="submit"
-        >
-          Log in
-        </button>
+      <button
+        text-capitalize
+        ion-button
+        block
+        color="secondary-2"
+        (click)="logForm()"
+      >
+        Log in
+      </button>
     </div>
   </div>
-
 </ion-content>

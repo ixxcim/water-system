@@ -4,6 +4,7 @@ import { ZonePage } from '../zone/zone';
 import { PostPage } from '../post/post';
 import { EditPage } from '../edit/edit';
 import { PrintPage } from '../print/print';
+import { StorageProvider } from '../../providers/local-storage/storage';
 
 /**
  * Generated class for the MenuPage page.
@@ -18,10 +19,14 @@ import { PrintPage } from '../print/print';
   templateUrl: 'menu.html'
 })
 export class MenuPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public storage: StorageProvider
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
+    this.storage.getLocalStorage();
   }
 
   zonePage() {
