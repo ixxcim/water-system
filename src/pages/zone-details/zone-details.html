@@ -5,20 +5,21 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="background">
-    <ion-title>{{user}}</ion-title>
+    <ion-title>{{ user }}</ion-title>
   </ion-navbar>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search by ID (Ex. 011-123-456)"></ion-searchbar>
+  <ion-searchbar
+    (ionInput)="getItems($event)"
+    placeholder="Search by ID (Ex. 011-123-456)"
+  ></ion-searchbar>
 </ion-header>
 
-
-<ion-content>
+<ion-content padding-right>
   <ion-list>
     <button ion-item *ngFor="let datas of data" (click)="getUser(datas)">
-      <h2> {{ datas.fname }} {{datas.lname}}</h2>
-      <h3> {{ datas.userid }}</h3>
-      <p> {{ datas.contact }}</p>
+      <h2 text-capitalize>{{ datas.fname }} {{ datas.lname }}</h2>
+      <h3>{{ datas.userid }}</h3>
+      <p>{{ datas.contact }}</p>
     </button>
   </ion-list>
 </ion-content>

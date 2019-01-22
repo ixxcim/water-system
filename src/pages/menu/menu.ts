@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ZonePage } from './../zone/zone';
-import { PostPage } from './../post/post';
-import { EditPage } from './../edit/edit';
-import { PrintPage } from './../print/print';
-import { StorageProvider } from './../../providers/local-storage/storage';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { ZonePage } from "./../zone/zone";
+import { PostPage } from "./../post/post";
+import { EditPage } from "./../edit/edit";
+import { PrintPage } from "./../print/print";
+import { StorageProvider } from "./../../providers/local-storage/storage";
 
 /**
  * Generated class for the MenuPage page.
@@ -15,8 +15,8 @@ import { StorageProvider } from './../../providers/local-storage/storage';
 
 @IonicPage()
 @Component({
-  selector: 'page-menu',
-  templateUrl: 'menu.html'
+  selector: "page-menu",
+  templateUrl: "menu.html"
 })
 export class MenuPage {
   constructor(
@@ -25,9 +25,7 @@ export class MenuPage {
     public storage: StorageProvider
   ) {}
 
-  ionViewDidLoad() {
-    this.storage.getLocalStorage();
-  }
+  ionViewDidLoad() {}
 
   zonePage() {
     this.navCtrl.push(ZonePage);

@@ -1,34 +1,35 @@
-import { Injectable } from '@angular/core';
-import { AlertController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { Injectable } from "@angular/core";
+import { AlertController } from "ionic-angular";
+import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class StorageProvider {
   data: any;
-
+  address: any;
   constructor(public alertCtrl: AlertController, private storage: Storage) {}
 
   setLocalStorage() {
     const prompt = this.alertCtrl.create({
-      title: 'Settings',
-      message: 'Change local storage IP address',
+      title: "Settings",
+      message: "Change local storage IP address",
       inputs: [
         {
-          name: 'ipaddress',
-          placeholder: 'Ex. 192.168.1.1'
+          name: "ipaddress",
+          placeholder: "Ex. 192.168.1.1"
         }
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: "Cancel",
           handler: data => {
-            console.log('Cancel clicked');
+            console.log("Cancel clicked");
           }
         },
         {
-          text: 'Save',
+          text: "Save",
           handler: data => {
-            this.storage.set('ipaddress', data.ipaddress);
+            localStorage.setItem("ipaddress", data.ipaddress);
+
             console.log(JSON.stringify(data));
             console.log(data.ipaddress);
           }
@@ -36,12 +37,5 @@ export class StorageProvider {
       ]
     });
     prompt.present();
-  }
-
-  getLocalStorage() {
-    return this.storage.get('ipaddress').then(name => {
-      this.data = name;
-      console.log(name);
-    });
   }
 }

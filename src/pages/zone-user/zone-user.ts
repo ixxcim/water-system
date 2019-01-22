@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import {
   NavController,
   NavParams,
   ToastController,
   AlertController,
   LoadingController
-} from 'ionic-angular';
-import { FunctionsProvider } from './../../providers/functions/functions';
-import { PrinterProvider } from './../../providers/printer/printer';
-import { commands } from './../../providers/printer/printer-commands';
+} from "ionic-angular";
+import { FunctionsProvider } from "./../../providers/functions/functions";
+import { PrinterProvider } from "./../../providers/printer/printer";
+import { commands } from "./../../providers/printer/printer-commands";
 
 /**
  * Generated class for the ZoneUserPage page.
@@ -18,8 +18,8 @@ import { commands } from './../../providers/printer/printer-commands';
  */
 
 @Component({
-  selector: 'page-zone-user',
-  templateUrl: 'zone-user.html'
+  selector: "page-zone-user",
+  templateUrl: "zone-user.html"
 })
 export class ZoneUserPage {
   user: any;
@@ -33,7 +33,7 @@ export class ZoneUserPage {
     public loadCtrl: LoadingController,
     private printer: PrinterProvider
   ) {
-    this.user = navParams.get('user');
+    this.user = navParams.get("user");
   }
 
   ionViewDidLoad() {
@@ -47,157 +47,35 @@ export class ZoneUserPage {
     let toast = this.toastCtrl.create({
       duration: 3000,
       message: data,
-      position: 'bottom'
+      position: "bottom"
     });
     toast.present();
   }
 
-  getPay() {
+  getPay(data) {
     let newData = {
-      pay: this.data['pay'],
+      pay: this.data["pay"],
       userid: this.user.userid
+    };
+
+    let printData = {
+      date: this.user.date,
+      fname: this.user.fname,
+      lname: this.user.lname,
+      locationid: this.user.locationid,
+      worth: this.user.worth
     };
 
     this.funtion.getPayment(newData).subscribe(res => {
       this.data = res;
       console.log(res);
     });
-  }
 
-  noSpecialChars(string) {
-    var translate = {
-        à: 'a',
-        á: 'a',
-        â: 'a',
-        ã: 'a',
-        ä: 'a',
-        å: 'a',
-        æ: 'a',
-        ç: 'c',
-        è: 'e',
-        é: 'e',
-        ê: 'e',
-        ë: 'e',
-        ì: 'i',
-        í: 'i',
-        î: 'i',
-        ï: 'i',
-        ð: 'd',
-        ñ: 'n',
-        ò: 'o',
-        ó: 'o',
-        ô: 'o',
-        õ: 'o',
-        ö: 'o',
-        ø: 'o',
-        ù: 'u',
-        ú: 'u',
-        û: 'u',
-        ü: 'u',
-        ý: 'y',
-        þ: 'b',
-        ÿ: 'y',
-        ŕ: 'r',
-        À: 'A',
-        Á: 'A',
-        Â: 'A',
-        Ã: 'A',
-        Ä: 'A',
-        Å: 'A',
-        Æ: 'A',
-        Ç: 'C',
-        È: 'E',
-        É: 'E',
-        Ê: 'E',
-        Ë: 'E',
-        Ì: 'I',
-        Í: 'I',
-        Î: 'I',
-        Ï: 'I',
-        Ð: 'D',
-        Ñ: 'N',
-        Ò: 'O',
-        Ó: 'O',
-        Ô: 'O',
-        Õ: 'O',
-        Ö: 'O',
-        Ø: 'O',
-        Ù: 'U',
-        Ú: 'U',
-        Û: 'U',
-        Ü: 'U',
-        Ý: 'Y',
-        Þ: 'B',
-        Ÿ: 'Y',
-        Ŕ: 'R'
-      },
-      translate_re = /[àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÝÞŸŔŔ]/gim;
-    return string.replace(translate_re, function(match) {
-      return translate[match];
-    });
-  }
-
-  print(device, data) {
-    console.log('Device mac: ', device);
-    console.log('Data: ', data);
-    let load = this.loadCtrl.create({
-      content: 'Printing...'
-    });
-    load.present();
-    this.printer.connectBluetooth(device).subscribe(
-      status => {
-        console.log(status);
-        this.printer
-          .printData(this.noSpecialChars(data))
-          .then(printStatus => {
-            console.log(printStatus);
-            let alert = this.alertCtrl.create({
-              title: 'Successful print!',
-              buttons: ['Ok']
-            });
-            load.dismiss();
-            alert.present();
-            this.printer.disconnectBluetooth();
-          })
-          .catch(error => {
-            console.log(error);
-            let alert = this.alertCtrl.create({
-              title: 'There was an error printing, please try again!',
-              buttons: ['Ok']
-            });
-            load.dismiss();
-            alert.present();
-            this.printer.disconnectBluetooth();
-          });
-      },
-      error => {
-        console.log(error);
-        let alert = this.alertCtrl.create({
-          title:
-            'There was an error connecting to the printer, please try again!',
-          buttons: ['Ok']
-        });
-        load.dismiss();
-        alert.present();
-      }
-    );
-  }
-
-  prepareToPrint(data) {
-    // u can remove this when generate the receipt using another method
-    if (!data.title) {
-      data.title = 'Title';
-    }
-    if (!data.text) {
-      data.text =
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tellus sapien, aliquam id mattis et, pretium eu libero. In dictum mauris vel lorem porttitor, et tempor neque semper. Aliquam erat volutpat. Aliquam vel malesuada urna, a pulvinar augue. Nunc ac fermentum massa. Proin efficitur purus fermentum tellus fringilla, fringilla aliquam nunc dignissim. Duis et luctus tellus, sed ullamcorper lectus.';
-    }
-
-    let receipt = '';
+    let receipt = "";
     receipt += commands.HARDWARE.HW_INIT;
     receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += data.title.toUpperCase();
+    receipt += printData.date;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
@@ -205,24 +83,24 @@ export class ZoneUserPage {
     receipt += commands.HORIZONTAL_LINE.HR2_58MM;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += data.text;
+    receipt += printData.fname;
     //secure space on footer
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.EOL;
 
     let alert = this.alertCtrl.create({
-      title: 'Select your printer',
+      title: "Select your printer",
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel'
+          text: "Cancel",
+          role: "cancel"
         },
         {
-          text: 'Select printer',
+          text: "Select printer",
           handler: device => {
             if (!device) {
-              this.showToast('Select a printer!');
+              this.showToast("Select a printer!");
               return false;
             }
             console.log(device);
@@ -239,12 +117,12 @@ export class ZoneUserPage {
           .searchBluetooth()
           .then(devices => {
             devices.forEach(device => {
-              console.log('Devices: ', JSON.stringify(device));
+              console.log("Devices: ", JSON.stringify(device));
               alert.addInput({
-                name: 'printer',
+                name: "printer",
                 value: device.address,
                 label: device.name,
-                type: 'radio'
+                type: "radio"
               });
             });
             alert.present();
@@ -252,13 +130,132 @@ export class ZoneUserPage {
           .catch(error => {
             console.log(error);
             this.showToast(
-              'There was an error connecting the printer, please try again!'
+              "There was an error connecting the printer, please try again!"
             );
           });
       })
       .catch(error => {
         console.log(error);
-        this.showToast('Error activating bluetooth, please try again!');
+        this.showToast("Error activating bluetooth, please try again!");
       });
+  }
+
+  noSpecialChars(string) {
+    var translate = {
+        à: "a",
+        á: "a",
+        â: "a",
+        ã: "a",
+        ä: "a",
+        å: "a",
+        æ: "a",
+        ç: "c",
+        è: "e",
+        é: "e",
+        ê: "e",
+        ë: "e",
+        ì: "i",
+        í: "i",
+        î: "i",
+        ï: "i",
+        ð: "d",
+        ñ: "n",
+        ò: "o",
+        ó: "o",
+        ô: "o",
+        õ: "o",
+        ö: "o",
+        ø: "o",
+        ù: "u",
+        ú: "u",
+        û: "u",
+        ü: "u",
+        ý: "y",
+        þ: "b",
+        ÿ: "y",
+        ŕ: "r",
+        À: "A",
+        Á: "A",
+        Â: "A",
+        Ã: "A",
+        Ä: "A",
+        Å: "A",
+        Æ: "A",
+        Ç: "C",
+        È: "E",
+        É: "E",
+        Ê: "E",
+        Ë: "E",
+        Ì: "I",
+        Í: "I",
+        Î: "I",
+        Ï: "I",
+        Ð: "D",
+        Ñ: "N",
+        Ò: "O",
+        Ó: "O",
+        Ô: "O",
+        Õ: "O",
+        Ö: "O",
+        Ø: "O",
+        Ù: "U",
+        Ú: "U",
+        Û: "U",
+        Ü: "U",
+        Ý: "Y",
+        Þ: "B",
+        Ÿ: "Y",
+        Ŕ: "R"
+      },
+      translate_re = /[àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÝÞŸŔŔ]/gim;
+    return string.replace(translate_re, function(match) {
+      return translate[match];
+    });
+  }
+
+  print(device, data) {
+    console.log("Device mac: ", device);
+    console.log("Data: ", data);
+    let load = this.loadCtrl.create({
+      content: "Printing..."
+    });
+    load.present();
+    this.printer.connectBluetooth(device).subscribe(
+      status => {
+        console.log(status);
+        this.printer
+          .printData(this.noSpecialChars(data))
+          .then(printStatus => {
+            console.log(printStatus);
+            let alert = this.alertCtrl.create({
+              title: "Successful print!",
+              buttons: ["Ok"]
+            });
+            load.dismiss();
+            alert.present();
+            this.printer.disconnectBluetooth();
+          })
+          .catch(error => {
+            console.log(error);
+            let alert = this.alertCtrl.create({
+              title: "There was an error printing, please try again!",
+              buttons: ["Ok"]
+            });
+            load.dismiss();
+            alert.present();
+            this.printer.disconnectBluetooth();
+          });
+      },
+      error => {
+        console.log(error);
+        let alert = this.alertCtrl.create({
+          title:
+            "There was an error connecting to the printer, please try again!",
+          buttons: ["Ok"]
+        });
+        load.dismiss();
+        alert.present();
+      }
+    );
   }
 }
