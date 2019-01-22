@@ -55996,6 +55996,10 @@ page-menu ion-label {
   color: #fff !important;
 }
 
+page-menu ion-col {
+  padding-bottom: 0 !important;
+}
+
 page-menu .item-transparent {
   background-color: transparent !important;
 }
