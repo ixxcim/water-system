@@ -24,16 +24,24 @@
       </ion-avatar>
       <h2>{{ user.month }}</h2>
       <h3>{{ user.measure }}</h3>
-      <p>500</p>
+      <p>{{ user.acrylic }}</p>
     </ion-item>
+    <form (ngSubmit)="getPay()">
+      <ion-item>
+        <ion-label>Pay</ion-label>
+        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Pay</ion-label>
-      <ion-input type="number" [(ngModel)]="data.title" name="pay"></ion-input>
-    </ion-item>
-
-    <button ion-button color="primary-1" float-right margin-top text-capitalize>
-      read meter
-    </button>
+      <button
+        ion-button
+        color="primary-1"
+        float-right
+        margin-top
+        text-capitalize
+        type="submit"
+      >
+        read meter
+      </button>
+    </form>
   </ion-list>
 </ion-content>

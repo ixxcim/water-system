@@ -600,6 +600,10 @@ var FunctionsProvider = /** @class */ (function () {
         var url = "http://localhost/watersystem/index.php/Welcome/search_zone/";
         return this.http.post(url, JSON.stringify(data));
     };
+    FunctionsProvider.prototype.getPayment = function (data) {
+        var url = "http://localhost/watersystem/index.php/Welcome/paying_bill/";
+        return this.http.post(url, JSON.stringify(data));
+    };
     FunctionsProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
@@ -688,6 +692,7 @@ var ZoneDetailsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneUserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,6 +704,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the ZoneUserPage page.
  *
@@ -706,24 +712,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ZoneUserPage = /** @class */ (function () {
-    function ZoneUserPage(navCtrl, navParams) {
+    function ZoneUserPage(navCtrl, navParams, funtion, toastCtrl, alertCtrl, loadCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.funtion = funtion;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.loadCtrl = loadCtrl;
+        this.data = {};
         this.user = navParams.get("user");
     }
     ZoneUserPage.prototype.ionViewDidLoad = function () {
         console.log(this.user.fname);
         this.user.fname;
+        console.log(this.user.userid);
     };
-    ZoneUserPage.prototype.getPay = function () { };
+    ZoneUserPage.prototype.showToast = function (data) {
+        var toast = this.toastCtrl.create({
+            duration: 3000,
+            message: data,
+            position: "bottom"
+        });
+        toast.present();
+    };
+    ZoneUserPage.prototype.getPay = function () {
+        var _this = this;
+        var newData = {
+            pay: this.data["pay"],
+            userid: this.user.userid
+        };
+        this.funtion.getPayment(newData).subscribe(function (res) {
+            _this.data = res;
+            console.log(res);
+        });
+    };
     ZoneUserPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-zone-user",template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-avatar item-start>\n        <img src="./../../assets/imgs/logo1.png" />\n      </ion-avatar>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>500</p>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Pay</ion-label>\n      <ion-input type="number" [(ngModel)]="data.title" name="pay"></ion-input>\n    </ion-item>\n\n    <button ion-button color="primary-1" float-right margin-top text-capitalize>\n      read meter\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
+            selector: "page-zone-user",template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-avatar item-start>\n        <img src="./../../assets/imgs/logo1.png" />\n      </ion-avatar>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Pay</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _f || Object])
     ], ZoneUserPage);
     return ZoneUserPage;
-    var _a, _b;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=zone-user.js.map

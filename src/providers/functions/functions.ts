@@ -10,4 +10,9 @@ export class FunctionsProvider {
     let url = "http://localhost/watersystem/index.php/Welcome/search_zone/";
     return this.http.post(url, JSON.stringify(data));
   }
+
+  getPayment(data) {
+    let url = "http://localhost/watersystem/index.php/Welcome/paying_bill/";
+    return this.http.post(url, JSON.stringify(data));
+  }
 }
