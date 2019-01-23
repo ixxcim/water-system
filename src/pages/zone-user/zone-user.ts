@@ -86,9 +86,13 @@ export class ZoneUserPage {
     receipt += printData.fname;
     //secure space on footer
     receipt += commands.EOL;
+    receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "THANK YOU";
     receipt += commands.EOL;
-
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "©tagoloanwaterdistrict";
     let alert = this.alertCtrl.create({
       title: "Select your printer",
       buttons: [
