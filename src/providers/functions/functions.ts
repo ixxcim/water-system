@@ -25,6 +25,14 @@ export class FunctionsProvider {
     return this.http.get(url);
   }
 
+  displayPrints() {
+    let url =
+    "http://" +
+    this.localAddress +
+    "/watersystem/index.php/Welcome/print_zone/";
+  return this.http.get(url);
+  }
+
   getPayment(data) {
     let url =
       "http://" +
