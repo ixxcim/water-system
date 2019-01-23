@@ -7,6 +7,7 @@ webpackJsonp([5],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,6 +19,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the EditPage page.
  *
@@ -25,18 +27,70 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var EditPage = /** @class */ (function () {
-    function EditPage(navCtrl, navParams) {
+    function EditPage(navCtrl, navParams, func, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.func = func;
+        this.alertCtrl = alertCtrl;
     }
     EditPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EditPage');
+        var _this = this;
+        this.func.displayPosts().subscribe(function (data) {
+            _this.posts = data[0];
+            console.log(_this.posts);
+        });
+    };
+    EditPage.prototype.updateReading = function (posts) {
+        // let data = {
+        //   userid: posts.userid,
+        //   measure: posts.measure
+        // };
+        var _this = this;
+        console.log(posts);
+        this.id = posts.userid;
+        this.measure = posts.measure;
+        var prompt = this.alertCtrl.create({
+            title: "Update reading",
+            message: "Please check carefully before saving",
+            inputs: [
+                {
+                    name: "measure",
+                    placeholder: this.measure
+                }
+            ],
+            buttons: [
+                {
+                    text: "Cancel",
+                    handler: function (data) {
+                        console.log("Cancel clicked");
+                    }
+                },
+                {
+                    text: "Save",
+                    handler: function (data) {
+                        var newData = {
+                            userid: _this.id,
+                            pay: data.measure
+                        };
+                        console.log(newData);
+                        _this.func.updateData(newData).subscribe(function (res) {
+                            _this.data = res;
+                            console.log(_this.data);
+                        });
+                    }
+                }
+            ]
+        });
+        prompt.present();
     };
     EditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/'<!--\n\n  Generated template for the EditPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Update</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding-right>\n\n  <ion-list>\n\n    <ion-item *ngFor="let post of posts">\n\n      <h2>{{ post.fname }} {{ post.lname }}</h2>\n\n      <h3>{{ post.locationid }}</h3>\n\n      <p>{{ post.date }}</p>\n\n      <p>{{ post.userid }}</p>\n\n      <button\n\n        ion-button\n\n        clear\n\n        item-end\n\n        color="primary"\n\n        (click)="updateReading(post)"\n\n      >\n\n        Update reading\n\n      </button>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/,
+            selector: "page-edit",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/'<!--\n\n  Generated template for the EditPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Update</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding-right>\n\n  <ion-list>\n\n    <ion-item *ngFor="let post of posts">\n\n      <h2>{{ post.fname }} {{ post.lname }}</h2>\n\n      <h3>{{ post.locationid }}</h3>\n\n      <p>{{ post.date }}</p>\n\n      <p>{{ post.userid }}</p>\n\n      <button\n\n        ion-button\n\n        clear\n\n        item-end\n\n        color="primary"\n\n        (click)="updateReading(post)"\n\n      >\n\n        Update reading\n\n      </button>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], EditPage);
     return EditPage;
 }());
@@ -49,59 +103,14 @@ var EditPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the PostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PostPage = /** @class */ (function () {
-    function PostPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    PostPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PostPage');
-    };
-    PostPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-post',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/'<!--\n\n  Generated template for the PostPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding-right>\n\n  <ion-list>\n\n    <ion-item *ngFor="let post of posts">\n\n      <h2>{{ post.fname }} {{ post.lname }}</h2>\n\n      <h3>{{ post.locationid }}</h3>\n\n      <p>{{ post.date }}</p>\n\n      <p>{{ post.userid }}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], PostPage);
-    return PostPage;
-}());
-
-//# sourceMappingURL=post.js.map
-
-/***/ }),
-
-/***/ 108:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_zone__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_post__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_zone__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_post__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_edit__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__print_print__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -158,15 +167,15 @@ var MenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 109:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZonePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__zone_details_zone_details__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__zone_details_zone_details__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -192,46 +201,46 @@ var ZonePage = /** @class */ (function () {
         this.navParams = navParams;
         this.funtion = funtion;
         this.item = [
-            'SIHAYON-LEFT',
-            'SIHAYON-RIGHT',
-            'SIH-R ZONE 6 SIHAYON STA. CRUZ',
-            'SIHAYON-R',
-            'BUKID-NANGKA',
-            'BUKID-ALUBIJID',
-            'ALUBIJID, VILLANUEVA',
-            'BUKID/BANBAN/NANGKA',
-            'BUKID-BANBAN',
-            'BANBAN',
-            'CORRALES',
-            'LOWER, NANGKA',
-            'ALUBIJID',
-            'BOGUAC',
-            'SAN MARTIN',
-            'GANGHAAN',
-            'STA. CRUZ',
-            'MOHON',
-            ' POB-HIWAY',
-            'POB-R1',
-            ' POB-R2',
-            'POB-CENTRO',
-            ' POB-CENTRO1',
-            'POB-CENTRO2',
-            'POB-DIKE',
-            'BRGY. 1',
-            'PULOT VALDERAMA',
-            ' BALUARTE',
-            ' TTI',
-            ' RELOCATION',
-            'NATUMOLAN-3',
-            'NATUMOLAN-CENTRO',
-            'VILLA MANGGA',
-            'POB-CENTRO',
-            ' VILLA VICTORIA',
-            'S/COGON',
-            'PROMISE LAND',
-            'GRACIA',
-            'KIBULDA',
-            'NATUMOLAN'
+            "SIHAYON-LEFT",
+            "SIHAYON-RIGHT",
+            "SIH-R ZONE 6 SIHAYON STA. CRUZ",
+            "SIHAYON-R",
+            "BUKID-NANGKA",
+            "BUKID-ALUBIJID",
+            "ALUBIJID, VILLANUEVA",
+            "BUKID/BANBAN/NANGKA",
+            "BUKID-BANBAN",
+            "BANBAN",
+            "CORRALES",
+            "LOWER, NANGKA",
+            "ALUBIJID",
+            "BOGUAC",
+            "SAN MARTIN",
+            "GANGHAAN",
+            "STA. CRUZ",
+            "MOHON",
+            " POB-HIWAY",
+            "POB-R1",
+            " POB-R2",
+            "POB-CENTRO",
+            " POB-CENTRO1",
+            "POB-CENTRO2",
+            "POB-DIKE",
+            "BRGY. 1",
+            "PULOT VALDERAMA",
+            " BALUARTE",
+            " TTI",
+            " RELOCATION",
+            "NATUMOLAN-3",
+            "NATUMOLAN-CENTRO",
+            "VILLA MANGGA",
+            "POB-CENTRO",
+            " VILLA VICTORIA",
+            "S/COGON",
+            "PROMISE LAND",
+            "GRACIA",
+            "KIBULDA",
+            "NATUMOLAN"
         ];
         this.getData(this.item);
     }
@@ -248,20 +257,76 @@ var ZonePage = /** @class */ (function () {
                 data: res[0]
             });
         }, function (err) {
-            console.log('lol');
+            console.log("lol");
             console.log(err);
         });
     };
     ZonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-zone',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list  inset>\n\n    <button ion-item *ngFor="let items of item" (click)="getData(items)">\n\n      <h2> {{ items }}</h2>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n      ></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/
+            selector: "page-zone",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list  inset>\n\n    <button ion-item *ngFor="let items of item" (click)="getData(items)">\n\n      <h2> {{ items }}</h2>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n      ></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]])
     ], ZonePage);
     return ZonePage;
 }());
 
 //# sourceMappingURL=zone.js.map
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(41);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the PostPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PostPage = /** @class */ (function () {
+    function PostPage(navCtrl, navParams, func) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.func = func;
+    }
+    PostPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.func.displayPosts().subscribe(function (data) {
+            _this.posts = data[0];
+            console.log(data[0]);
+        });
+    };
+    PostPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: "page-post",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/'<!--\n\n  Generated template for the PostPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding-right>\n\n  <ion-list>\n\n    <ion-item *ngFor="let post of posts">\n\n      <h2>{{ post.fname }} {{ post.lname }}</h2>\n\n      <h3>{{ post.locationid }}</h3>\n\n      <p>{{ post.date }}</p>\n\n      <p>{{ post.userid }}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]])
+    ], PostPage);
+    return PostPage;
+}());
+
+//# sourceMappingURL=post.js.map
 
 /***/ }),
 
@@ -273,7 +338,7 @@ var ZonePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_printer_printer__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer_commands__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer_commands__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -540,11 +605,11 @@ var map = {
 		4
 	],
 	"../pages/menu/menu.module": [
-		293,
+		292,
 		3
 	],
 	"../pages/post/post.module": [
-		292,
+		293,
 		2
 	],
 	"../pages/print/print.module": [
@@ -572,14 +637,14 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 165:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__ = __webpack_require__(164);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -641,16 +706,16 @@ var ZoneDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneUserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -704,6 +769,7 @@ var ZoneUserPage = /** @class */ (function () {
         };
         var printData = {
             date: this.user.date,
+            userid: this.user.userid,
             fname: this.user.fname,
             lname: this.user.lname,
             locationid: this.user.locationid,
@@ -717,24 +783,127 @@ var ZoneUserPage = /** @class */ (function () {
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HARDWARE.HW_INIT;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_4SQUARE;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
-        receipt += printData.date;
+        receipt += "TAGOLOAN WATER DISTRICT";
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += "Tagoloan, 9001 Misamis Oriental";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_2WIDTH;
+        receipt += "STATEMENT OF ACCOUNT WATER BILL";
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "BILL MONTH:" + "January 2019";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "CONSUMER INFORMATION";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "Name:" + printData.fname + printData.lname;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "Account No:" + printData.userid;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "Meter No.:" + printData.fname + printData.lname;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "Type:" + printData.fname + printData.lname;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += "(depends on what type the consumer has.)";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += "Starting Rate:" + printData.fname + printData.lname;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += "(depends on what type the consumer has.)";
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR2_58MM;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += "CONSUMPTION DETAILS";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-        receipt += printData.fname;
-        //secure space on footer
+        receipt += "Period Covered:";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Previous Reading:";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Present Reading:";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Bill Amout:";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Note: PENALTY FOR LATE PAYMENT";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Penalty Amount: ";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Arrears: ";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "OVER DUE AMOUNT: ";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "DUE DATE: ";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Note:";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt +=
+            "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Meter Reader: ";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += "Date and Time of read";
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_2WIDTH;
         receipt += "THANK YOU";
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
         receipt += "©tagoloanwaterdistrict";
+        //secure space on footer
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         var alert = this.alertCtrl.create({
             title: "Select your printer",
             buttons: [
@@ -909,7 +1078,7 @@ var ZoneUserPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 169:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1014,15 +1183,15 @@ var commands = {
 
 /***/ }),
 
-/***/ 211:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1037,10 +1206,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, loadingCtrl, alertCtrl, storage) {
+    function HomePage(navCtrl, loadingCtrl, storage) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
-        this.alertCtrl = alertCtrl;
         this.storage = storage;
     }
     HomePage.prototype.checkSettings = function () {
@@ -1055,7 +1223,6 @@ var HomePage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]])
     ], HomePage);
     return HomePage;
@@ -1065,13 +1232,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1079,7 +1246,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1087,24 +1254,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_post_post__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_post_post__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_print_print__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_printer_printer__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_auth_provider_authentication__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1157,8 +1324,8 @@ var AppModule = /** @class */ (function () {
                 }, {
                     links: [
                         { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'post', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'post', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/print/print.module#PrintPageModule', name: 'PrintPage', segment: 'print', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/zone/zone.module#ZonePageModule', name: 'ZonePage', segment: 'zone', priority: 'low', defaultHistory: [] }
                     ]
@@ -1203,9 +1370,9 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1297,79 +1464,14 @@ var AuthenticationProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 46:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(163);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var StorageProvider = /** @class */ (function () {
-    function StorageProvider(alertCtrl, storage) {
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-    }
-    StorageProvider.prototype.setLocalStorage = function () {
-        var prompt = this.alertCtrl.create({
-            title: "Settings",
-            message: "Change local storage IP address",
-            inputs: [
-                {
-                    name: "ipaddress",
-                    placeholder: "Ex. 192.168.1.1"
-                }
-            ],
-            buttons: [
-                {
-                    text: "Cancel",
-                    handler: function (data) {
-                        console.log("Cancel clicked");
-                    }
-                },
-                {
-                    text: "Save",
-                    handler: function (data) {
-                        localStorage.setItem("ipaddress", data.ipaddress);
-                        console.log(JSON.stringify(data));
-                        console.log(data.ipaddress);
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    StorageProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
-    ], StorageProvider);
-    return StorageProvider;
-}());
-
-//# sourceMappingURL=storage.js.map
-
-/***/ }),
-
-/***/ 80:
+/***/ 41:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FunctionsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__local_storage_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__local_storage_storage__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1394,10 +1496,22 @@ var FunctionsProvider = /** @class */ (function () {
             "/watersystem/index.php/Welcome/search_zone/";
         return this.http.post(url, JSON.stringify(data));
     };
+    FunctionsProvider.prototype.displayPosts = function () {
+        var url = "http://" +
+            this.localAddress +
+            "/watersystem/index.php/Welcome/display_post/";
+        return this.http.get(url);
+    };
     FunctionsProvider.prototype.getPayment = function (data) {
         var url = "http://" +
             this.localAddress +
             "/watersystem/index.php/Welcome/paying_bill/";
+        return this.http.post(url, JSON.stringify(data));
+    };
+    FunctionsProvider.prototype.updateData = function (data) {
+        var url = "http://" +
+            this.localAddress +
+            "/watersystem/index.php/Welcome/update_bill/";
         return this.http.post(url, JSON.stringify(data));
     };
     FunctionsProvider = __decorate([
@@ -1411,12 +1525,82 @@ var FunctionsProvider = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 47:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var StorageProvider = /** @class */ (function () {
+    function StorageProvider(alertCtrl, toastCtrl) {
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+    }
+    StorageProvider.prototype.setLocalStorage = function () {
+        var _this = this;
+        var prompt = this.alertCtrl.create({
+            title: "Settings",
+            message: "Change local storage IP address",
+            inputs: [
+                {
+                    name: "ipaddress",
+                    placeholder: "Ex. 192.168.1.1"
+                }
+            ],
+            buttons: [
+                {
+                    text: "Cancel",
+                    handler: function (data) {
+                        console.log("Cancel clicked");
+                    }
+                },
+                {
+                    text: "Save",
+                    handler: function (data) {
+                        localStorage.setItem("ipaddress", data.ipaddress);
+                        var toast = _this.toastCtrl.create({
+                            message: "The IP " +
+                                data.ipaddress +
+                                " was added successfully in your local storage",
+                            duration: 3000
+                        });
+                        toast.present();
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    StorageProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
+    ], StorageProvider);
+    return StorageProvider;
+}());
+
+//# sourceMappingURL=storage.js.map
+
+/***/ }),
+
 /***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrinterProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1459,5 +1643,5 @@ var PrinterProvider = /** @class */ (function () {
 
 /***/ })
 
-},[212]);
+},[211]);
 //# sourceMappingURL=main.js.map

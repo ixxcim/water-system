@@ -60,6 +60,7 @@ export class ZoneUserPage {
 
     let printData = {
       date: this.user.date,
+      userid: this.user.userid,
       fname: this.user.fname,
       lname: this.user.lname,
       locationid: this.user.locationid,
@@ -75,24 +76,128 @@ export class ZoneUserPage {
     receipt += commands.HARDWARE.HW_INIT;
     receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += printData.date;
+    receipt += "TAGOLOAN WATER DISTRICT";
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "Tagoloan, 9001 Misamis Oriental";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += "STATEMENT OF ACCOUNT WATER BILL";
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "BILL MONTH:" + "January 2019";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "CONSUMER INFORMATION";
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "Name:" + printData.fname + printData.lname;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "Account No:" + printData.userid;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "Meter No.:" + printData.fname + printData.lname;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "Type:" + printData.fname + printData.lname;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "(depends on what type the consumer has.)";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += "Starting Rate:" + printData.fname + printData.lname;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "(depends on what type the consumer has.)";
     receipt += commands.EOL;
     receipt += commands.HORIZONTAL_LINE.HR2_58MM;
     receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += "CONSUMPTION DETAILS";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += printData.fname;
-    //secure space on footer
+    receipt += "Period Covered:";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Previous Reading:";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Present Reading:";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Bill Amout:";
+    receipt += commands.EOL;
+    receipt += commands.HORIZONTAL_LINE.HR_58MM;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Note: PENALTY FOR LATE PAYMENT";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Penalty Amount: ";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Arrears: ";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "OVER DUE AMOUNT: ";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "DUE DATE: ";
+    receipt += commands.EOL;
+    receipt += commands.HORIZONTAL_LINE.HR_58MM;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Note:";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt +=
+      "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Meter Reader: ";
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+    receipt += "Date and Time of read";
     receipt += commands.EOL;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
     receipt += "THANK YOU";
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
     receipt += "©tagoloanwaterdistrict";
+    //secure space on footer
+    receipt += commands.EOL;
+    receipt += commands.EOL;
+    receipt += commands.EOL;
+
     let alert = this.alertCtrl.create({
       title: "Select your printer",
       buttons: [
