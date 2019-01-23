@@ -83,9 +83,6 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
     receipt += commands.HARDWARE.HW_INIT;
     receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
@@ -95,10 +92,11 @@ export class ZoneUserPage {
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += "Tagoloan, 9001 Misamis Oriental";
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.EOL;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += "STATEMENT OF ACCOUNT WATER BILL";
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
@@ -110,6 +108,7 @@ export class ZoneUserPage {
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += "CONSUMER INFORMATION";
+    receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
@@ -140,7 +139,7 @@ export class ZoneUserPage {
     receipt += "(depends on what type the consumer has.)";
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
@@ -166,7 +165,7 @@ export class ZoneUserPage {
     receipt += "Bill Amount: " + printData.locationid;
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
@@ -192,7 +191,7 @@ export class ZoneUserPage {
     receipt += "DUE DATE: " + printData.locationid;
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
@@ -205,6 +204,7 @@ export class ZoneUserPage {
     receipt +=
       "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
     receipt += commands.EOL;
+    receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
     receipt += "Meter Reader: " + printData.locationid;
@@ -214,7 +214,7 @@ export class ZoneUserPage {
     receipt += "Date and Time of read: " + printData.locationid;
     receipt += commands.EOL;
     receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
     receipt += commands.HORIZONTAL_LINE.HR_58MM;
     receipt += commands.EOL;
