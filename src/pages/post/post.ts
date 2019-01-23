@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { FunctionsProvider } from "./../../providers/functions/functions";
 
 /**
  * Generated class for the PostPage page.
@@ -10,16 +11,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-post',
-  templateUrl: 'post.html',
+  selector: "page-post",
+  templateUrl: "post.html"
 })
 export class PostPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  posts: any;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public func: FunctionsProvider
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PostPage');
+    this.func.displayPosts().subscribe(data => {
+      this.posts = data[0];
+      console.log(data[0]);
+    });
   }
-
 }

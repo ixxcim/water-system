@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 104:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34,7 +34,7 @@ var EditPage = /** @class */ (function () {
     };
     EditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/'<!--\n\n  Generated template for the EditPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Edit</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/,
+            selector: 'page-edit',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/'<!--\n\n  Generated template for the EditPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Edit</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\edit\edit.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], EditPage);
@@ -45,18 +45,63 @@ var EditPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 107:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the PostPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PostPage = /** @class */ (function () {
+    function PostPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    PostPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad PostPage');
+    };
+    PostPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-post',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/'<!--\n\n  Generated template for the PostPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding-right>\n\n  <ion-list>\n\n    <ion-item *ngFor="let post of posts">\n\n      <h2>{{ post.fname }} {{ post.lname }}</h2>\n\n      <h3>{{ post.locationid }}</h3>\n\n      <p>{{ post.date }}</p>\n\n      <p>{{ post.userid }}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], PostPage);
+    return PostPage;
+}());
+
+//# sourceMappingURL=post.js.map
+
+/***/ }),
+
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_zone__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_zone__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__post_post__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_edit__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__print_print__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__edit_edit__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__print_print__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_local_storage_storage__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -85,9 +130,7 @@ var MenuPage = /** @class */ (function () {
         this.navParams = navParams;
         this.storage = storage;
     }
-    MenuPage.prototype.ionViewDidLoad = function () {
-        this.storage.getLocalStorage();
-    };
+    MenuPage.prototype.ionViewDidLoad = function () { };
     MenuPage.prototype.zonePage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__zone_zone__["a" /* ZonePage */]);
     };
@@ -102,7 +145,7 @@ var MenuPage = /** @class */ (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton color="background">\n\n    <!-- <ion-buttons float-left>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-menu"></ion-icon>\n\n      </button>\n\n    </ion-buttons> -->\n\n    <ion-title float-left>\n\n      <span class="s-1">water</span>System\n\n      <span class="s-2">Tagoloan Water District</span>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <!-- <ion-list>\n\n    <ion-item text-center>\n\n      <div class="avatar" margin-bottom>\n\n        <ion-thumbnail>\n\n          <img\n\n            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=adult-beard-boy-220453.jpg&fm=jpg"\n\n          />\n\n        </ion-thumbnail>\n\n      </div>\n\n      <h1>Michael Jumoc</h1>\n\n      <p>Employee</p>\n\n      <ion-grid margin-top>\n\n        <ion-row>\n\n          <ion-col\n\n            ><button\n\n              color="color-1"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-1"\n\n            >\n\n              My Account\n\n            </button></ion-col\n\n          >\n\n          <ion-col\n\n            ><button\n\n              color="color-2"\n\n              ion-button\n\n              full\n\n              text-capitalize\n\n              class="btn-2"\n\n            >\n\n              Check Settings\n\n            </button></ion-col\n\n          >\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-item>\n\n  </ion-list> -->\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="zonePage()" class="item-1">\n\n            <ion-icon\n\n              class="icon-1"\n\n              name="ios-map"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Zone</h1>\n\n            <p margin-left>4 barangays</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="postPage()" class="item-2">\n\n            <ion-icon\n\n              class="icon-2"\n\n              name="ios-document"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Post</h1>\n\n            <p margin-left>5 items</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="editPage()" class="item-3">\n\n            <ion-icon\n\n              class="icon-3"\n\n              name="ios-create"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Update</h1>\n\n            <p margin-left>Update post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item (click)="printPage()" class="item-4">\n\n            <ion-icon\n\n              class="icon-4"\n\n              name="ios-print"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Print</h1>\n\n            <p margin-left>Print post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-5">\n\n            <ion-icon\n\n              class="icon-5"\n\n              name="ios-bluetooth"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Bluetooth</h1>\n\n            <p margin-left>Configure device</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-list>\n\n          <button ion-item class="item-6">\n\n            <ion-icon\n\n              class="icon-6"\n\n              name="ios-person"\n\n              margin-left\n\n              margin-bottom\n\n            ></ion-icon>\n\n            <h1 margin-left>Account</h1>\n\n            <p margin-left>View account</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\menu\menu.html"*/
+            selector: "page-menu",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton color="background">\n\n    <ion-title float-left>\n\n      <span class="s-1">water</span>System\n\n      <span class="s-2">Tagoloan Water District</span>\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only round>\n\n        <ion-icon name="ios-search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list inset>\n\n    <button ion-item (click)="zonePage()" class="btn-item">\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/zone.png" />\n\n      </ion-thumbnail>\n\n      <h1>Zone</h1>\n\n      <p>40 barangays</p>\n\n    </button>\n\n    <button ion-item (click)="postPage()">\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/post.png" />\n\n      </ion-thumbnail>\n\n      <h1>Post</h1>\n\n      <p>1 readed measure</p>\n\n    </button>\n\n    <button ion-item (click)="printPage()">\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/print.png" />\n\n      </ion-thumbnail>\n\n      <h1>Print</h1>\n\n      <p>Print data from zone</p>\n\n    </button>\n\n    <button ion-item (click)="editPage()">\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/update.png" />\n\n      </ion-thumbnail>\n\n      <h1>Update</h1>\n\n      <p>Update data from post</p>\n\n    </button>\n\n    <button ion-item>\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/bluetooth.png" />\n\n      </ion-thumbnail>\n\n      <h1>Bluetooth</h1>\n\n      <p>Configure bluetooth device</p>\n\n    </button>\n\n    <button ion-item>\n\n      <ion-thumbnail item-start>\n\n        <img src="./../../assets/imgs/account.png" />\n\n      </ion-thumbnail>\n\n      <h1>Account</h1>\n\n      <p>View account</p>\n\n    </button>\n\n  </ion-list>\n\n  <!-- <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item (click)="zonePage()" class="item-1">\n\n            <h1 margin-left>Zone</h1>\n\n            <p margin-left>4 barangays</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item (click)="postPage()" class="item-2">\n\n            <h1 margin-left>Post</h1>\n\n            <p margin-left>1 items</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item (click)="editPage()" class="item-3">\n\n            <h1 margin-left>Update</h1>\n\n            <p margin-left>Update post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item (click)="printPage()" class="item-4">\n\n            <h1 margin-left>Print</h1>\n\n            <p margin-left>Print post</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item class="item-5">\n\n            <h1 margin-left>Bluetooth</h1>\n\n            <p margin-left>Configure device</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col col-12 col-sm>\n\n        <ion-list>\n\n          <button ion-item class="item-6">\n\n            <h1 margin-left>Account</h1>\n\n            <p margin-left>View account</p>\n\n          </button>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid> -->\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\menu\menu.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -115,15 +158,15 @@ var MenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZonePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__zone_details_zone_details__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__zone_details_zone_details__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -211,7 +254,7 @@ var ZonePage = /** @class */ (function () {
     };
     ZonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-zone',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list  inset>\n\n    <button ion-item *ngFor="let items of item" (click)="getData(items)">\n\n      <h2> {{ items }}</h2>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n      ></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/
+            selector: 'page-zone',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Zone</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list  inset>\n\n    <button ion-item *ngFor="let items of item" (click)="getData(items)">\n\n      <h2> {{ items }}</h2>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n      ></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone\zone.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]])
     ], ZonePage);
@@ -222,60 +265,15 @@ var ZonePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 107:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the PostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PostPage = /** @class */ (function () {
-    function PostPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    PostPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PostPage');
-    };
-    PostPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-post',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/'<!--\n\n  Generated template for the PostPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Post</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon\n\n        name="ios-arrow-forward"\n\n        item-end\n\n        large\n\n        isActive="false"\n\n      ></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n    <button ion-item>\n\n      <h2>Barangay 26</h2>\n\n      <p>Lapasan</p>\n\n      <ion-icon name="ios-arrow-forward" item-end large></ion-icon>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\post\post.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], PostPage);
-    return PostPage;
-}());
-
-//# sourceMappingURL=post.js.map
-
-/***/ }),
-
-/***/ 108:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrintPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_printer_printer__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer_commands__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_printer_printer__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer_commands__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -501,7 +499,7 @@ var PrintPage = /** @class */ (function () {
     };
     PrintPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-print',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\print\print.html"*/'<!--\n\n  Generated template for the PrintPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Print</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\print\print.html"*/
+            selector: 'page-print',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\print\print.html"*/'<!--\n\n  Generated template for the PrintPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="background"> <ion-title>Print</ion-title> </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding> </ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\print\print.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_printer_printer__["a" /* PrinterProvider */],
@@ -516,7 +514,7 @@ var PrintPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 121:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -529,11 +527,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 119;
+webpackEmptyAsyncContext.id = 121;
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -542,11 +540,11 @@ var map = {
 		4
 	],
 	"../pages/menu/menu.module": [
-		292,
+		293,
 		3
 	],
 	"../pages/post/post.module": [
-		293,
+		292,
 		2
 	],
 	"../pages/print/print.module": [
@@ -569,56 +567,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 160;
+webpackAsyncContext.id = 162;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 161:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FunctionsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(79);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var FunctionsProvider = /** @class */ (function () {
-    function FunctionsProvider(http) {
-        this.http = http;
-    }
-    FunctionsProvider.prototype.displayZones = function (data) {
-        var url = "http://localhost/watersystem/index.php/Welcome/search_zone/";
-        return this.http.post(url, JSON.stringify(data));
-    };
-    FunctionsProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], FunctionsProvider);
-    return FunctionsProvider;
-}());
-
-//# sourceMappingURL=functions.js.map
-
-/***/ }),
-
-/***/ 162:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__ = __webpack_require__(166);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -669,7 +630,7 @@ var ZoneDetailsPage = /** @class */ (function () {
     };
     ZoneDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-zone-details',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/'<!--\n  Generated template for the ZoneDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user }}</ion-title>\n  </ion-navbar>\n  <ion-searchbar\n    (ionInput)="getItems($event)"\n    placeholder="Search by ID (Ex. 011-123-456)"\n  ></ion-searchbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <button ion-item *ngFor="let datas of data" (click)="getUser(datas)">\n      <h2 text-capitalize>{{ datas.fname }} {{ datas.lname }}</h2>\n      <h3>{{ datas.userid }}</h3>\n      <p>{{ datas.contact }}</p>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/,
+            selector: 'page-zone-details',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/'<!--\n  Generated template for the ZoneDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user }}</ion-title>\n  </ion-navbar>\n  <ion-searchbar\n    (ionInput)="getItems($event)"\n    placeholder="Search by ID (Ex. 011-123-456)"\n  ></ion-searchbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <button ion-item *ngFor="let datas of data" (click)="getUser(datas)">\n      <h2 text-capitalize>{{ datas.fname }} {{ datas.lname }}</h2>\n      <h3>{{ datas.userid }}</h3>\n      <p>{{ datas.contact }}</p>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
     ], ZoneDetailsPage);
@@ -680,13 +641,16 @@ var ZoneDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 163:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneUserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -696,6 +660,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 
 /**
@@ -705,27 +672,235 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ZoneUserPage = /** @class */ (function () {
-    function ZoneUserPage(navCtrl, navParams) {
+    function ZoneUserPage(navCtrl, navParams, funtion, toastCtrl, alertCtrl, loadCtrl, printer) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.funtion = funtion;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.loadCtrl = loadCtrl;
+        this.printer = printer;
         this.data = {};
         this.user = navParams.get("user");
     }
     ZoneUserPage.prototype.ionViewDidLoad = function () {
         console.log(this.user.fname);
         this.user.fname;
+        console.log(this.user.userid);
     };
-    ZoneUserPage.prototype.getPay = function () {
+    ZoneUserPage.prototype.showToast = function (data) {
+        var toast = this.toastCtrl.create({
+            duration: 3000,
+            message: data,
+            position: "bottom"
+        });
+        toast.present();
+    };
+    ZoneUserPage.prototype.getPay = function (data) {
+        var _this = this;
         var newData = {
-            pay: this.data["pay"]
+            pay: this.data["pay"],
+            userid: this.user.userid
         };
-        console.log(newData);
+        var printData = {
+            date: this.user.date,
+            fname: this.user.fname,
+            lname: this.user.lname,
+            locationid: this.user.locationid,
+            worth: this.user.worth
+        };
+        this.funtion.getPayment(newData).subscribe(function (res) {
+            _this.data = res;
+            console.log(res);
+        });
+        var receipt = "";
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HARDWARE.HW_INIT;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_4SQUARE;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+        receipt += printData.date;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR2_58MM;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+        receipt += printData.fname;
+        //secure space on footer
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        var alert = this.alertCtrl.create({
+            title: "Select your printer",
+            buttons: [
+                {
+                    text: "Cancel",
+                    role: "cancel"
+                },
+                {
+                    text: "Select printer",
+                    handler: function (device) {
+                        if (!device) {
+                            _this.showToast("Select a printer!");
+                            return false;
+                        }
+                        console.log(device);
+                        _this.print(device, receipt);
+                    }
+                }
+            ]
+        });
+        this.printer
+            .enableBluetooth()
+            .then(function () {
+            _this.printer
+                .searchBluetooth()
+                .then(function (devices) {
+                devices.forEach(function (device) {
+                    console.log("Devices: ", JSON.stringify(device));
+                    alert.addInput({
+                        name: "printer",
+                        value: device.address,
+                        label: device.name,
+                        type: "radio"
+                    });
+                });
+                alert.present();
+            })
+                .catch(function (error) {
+                console.log(error);
+                _this.showToast("There was an error connecting the printer, please try again!");
+            });
+        })
+            .catch(function (error) {
+            console.log(error);
+            _this.showToast("Error activating bluetooth, please try again!");
+        });
+    };
+    ZoneUserPage.prototype.noSpecialChars = function (string) {
+        var translate = {
+            à: "a",
+            á: "a",
+            â: "a",
+            ã: "a",
+            ä: "a",
+            å: "a",
+            æ: "a",
+            ç: "c",
+            è: "e",
+            é: "e",
+            ê: "e",
+            ë: "e",
+            ì: "i",
+            í: "i",
+            î: "i",
+            ï: "i",
+            ð: "d",
+            ñ: "n",
+            ò: "o",
+            ó: "o",
+            ô: "o",
+            õ: "o",
+            ö: "o",
+            ø: "o",
+            ù: "u",
+            ú: "u",
+            û: "u",
+            ü: "u",
+            ý: "y",
+            þ: "b",
+            ÿ: "y",
+            ŕ: "r",
+            À: "A",
+            Á: "A",
+            Â: "A",
+            Ã: "A",
+            Ä: "A",
+            Å: "A",
+            Æ: "A",
+            Ç: "C",
+            È: "E",
+            É: "E",
+            Ê: "E",
+            Ë: "E",
+            Ì: "I",
+            Í: "I",
+            Î: "I",
+            Ï: "I",
+            Ð: "D",
+            Ñ: "N",
+            Ò: "O",
+            Ó: "O",
+            Ô: "O",
+            Õ: "O",
+            Ö: "O",
+            Ø: "O",
+            Ù: "U",
+            Ú: "U",
+            Û: "U",
+            Ü: "U",
+            Ý: "Y",
+            Þ: "B",
+            Ÿ: "Y",
+            Ŕ: "R"
+        }, translate_re = /[àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÝÞŸŔŔ]/gim;
+        return string.replace(translate_re, function (match) {
+            return translate[match];
+        });
+    };
+    ZoneUserPage.prototype.print = function (device, data) {
+        var _this = this;
+        console.log("Device mac: ", device);
+        console.log("Data: ", data);
+        var load = this.loadCtrl.create({
+            content: "Printing..."
+        });
+        load.present();
+        this.printer.connectBluetooth(device).subscribe(function (status) {
+            console.log(status);
+            _this.printer
+                .printData(_this.noSpecialChars(data))
+                .then(function (printStatus) {
+                console.log(printStatus);
+                var alert = _this.alertCtrl.create({
+                    title: "Successful print!",
+                    buttons: ["Ok"]
+                });
+                load.dismiss();
+                alert.present();
+                _this.printer.disconnectBluetooth();
+            })
+                .catch(function (error) {
+                console.log(error);
+                var alert = _this.alertCtrl.create({
+                    title: "There was an error printing, please try again!",
+                    buttons: ["Ok"]
+                });
+                load.dismiss();
+                alert.present();
+                _this.printer.disconnectBluetooth();
+            });
+        }, function (error) {
+            console.log(error);
+            var alert = _this.alertCtrl.create({
+                title: "There was an error connecting to the printer, please try again!",
+                buttons: ["Ok"]
+            });
+            load.dismiss();
+            alert.present();
+        });
     };
     ZoneUserPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-zone-user",template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title text-capitalize>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-avatar item-start>\n        <img src="./../../assets/imgs/logo1.png" />\n      </ion-avatar>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Pay</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
+            selector: "page-zone-user",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title text-capitalize>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-icon\n        name="\n        ios-contact"\n        item-start\n      ></ion-icon>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Pay</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__["a" /* PrinterProvider */]])
     ], ZoneUserPage);
     return ZoneUserPage;
 }());
@@ -734,237 +909,7 @@ var ZoneUserPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 164:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrinterProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var PrinterProvider = /** @class */ (function () {
-    function PrinterProvider(bluetoothSerial) {
-        this.bluetoothSerial = bluetoothSerial;
-    }
-    PrinterProvider.prototype.enableBluetooth = function () {
-        return this.bluetoothSerial.enable();
-    };
-    PrinterProvider.prototype.searchBluetooth = function () {
-        return this.bluetoothSerial.list();
-    };
-    PrinterProvider.prototype.connectBluetooth = function (address) {
-        return this.bluetoothSerial.connect(address);
-    };
-    PrinterProvider.prototype.printData = function (data) {
-        return this.bluetoothSerial.write(data);
-    };
-    PrinterProvider.prototype.disconnectBluetooth = function () {
-        return this.bluetoothSerial.disconnect();
-    };
-    PrinterProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */]])
-    ], PrinterProvider);
-    return PrinterProvider;
-}());
-
-//# sourceMappingURL=printer.js.map
-
-/***/ }),
-
-/***/ 210:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(105);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, loadingCtrl, alertCtrl, storage) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-    }
-    HomePage.prototype.checkSettings = function () {
-        this.storage.setLocalStorage();
-    };
-    HomePage.prototype.logForm = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__menu_menu__["a" /* MenuPage */]);
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title"><span>water</span>System</h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n      (click)="checkSettings()"\n\n    >\n\n      Change Settings\n\n    </button>\n\n    <div padding-left padding-right text-center>\n\n      <button\n\n        text-capitalize\n\n        ion-button\n\n        block\n\n        color="secondary-2"\n\n        (click)="logForm()"\n\n      >\n\n        Log in\n\n      </button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 211:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
-//# sourceMappingURL=main.js.map
-
-/***/ }),
-
-/***/ 232:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_post_post__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_print_print__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_printer_printer__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_auth_provider_authentication__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__ = __webpack_require__(161);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AppModule = /** @class */ (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {
-                    scrollAssist: false,
-                    autoFocusAssist: false
-                }, {
-                    links: [
-                        { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'post', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/print/print.module#PrintPageModule', name: 'PrintPage', segment: 'print', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/zone/zone.module#ZonePageModule', name: 'ZonePage', segment: 'zone', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */],
-                __WEBPACK_IMPORTED_MODULE_17__providers_printer_printer__["a" /* PrinterProvider */],
-                __WEBPACK_IMPORTED_MODULE_18__providers_auth_provider_authentication__["a" /* AuthenticationProvider */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__["a" /* StorageProvider */],
-                __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__["a" /* FunctionsProvider */]
-            ]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 269:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1069,6 +1014,188 @@ var commands = {
 
 /***/ }),
 
+/***/ 211:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(108);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, loadingCtrl, alertCtrl, storage) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+    }
+    HomePage.prototype.checkSettings = function () {
+        this.storage.setLocalStorage();
+    };
+    HomePage.prototype.logForm = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__menu_menu__["a" /* MenuPage */]);
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: "page-home",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title"><span>water</span>System</h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n      (click)="checkSettings()"\n\n    >\n\n      Change Settings\n\n    </button>\n\n    <div padding-left padding-right text-center>\n\n      <button\n\n        text-capitalize\n\n        ion-button\n\n        block\n\n        color="secondary-2"\n\n        (click)="logForm()"\n\n      >\n\n        Log in\n\n      </button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_post_post__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_print_print__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_printer_printer__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_auth_provider_authentication__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__ = __webpack_require__(80);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */], {
+                    scrollAssist: false,
+                    autoFocusAssist: false
+                }, {
+                    links: [
+                        { loadChildren: '../pages/edit/edit.module#EditPageModule', name: 'EditPage', segment: 'edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/post/post.module#PostPageModule', name: 'PostPage', segment: 'post', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/print/print.module#PrintPageModule', name: 'PrintPage', segment: 'print', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/zone/zone.module#ZonePageModule', name: 'ZonePage', segment: 'zone', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */],
+                __WEBPACK_IMPORTED_MODULE_17__providers_printer_printer__["a" /* PrinterProvider */],
+                __WEBPACK_IMPORTED_MODULE_18__providers_auth_provider_authentication__["a" /* AuthenticationProvider */],
+                __WEBPACK_IMPORTED_MODULE_19__providers_local_storage_storage__["a" /* StorageProvider */],
+                __WEBPACK_IMPORTED_MODULE_20__providers_functions_functions__["a" /* FunctionsProvider */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
 /***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1076,9 +1203,9 @@ var commands = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(211);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1114,7 +1241,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -1132,7 +1259,7 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthenticationProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
@@ -1170,14 +1297,14 @@ var AuthenticationProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 82:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1196,27 +1323,26 @@ var StorageProvider = /** @class */ (function () {
         this.storage = storage;
     }
     StorageProvider.prototype.setLocalStorage = function () {
-        var _this = this;
         var prompt = this.alertCtrl.create({
-            title: 'Settings',
-            message: 'Change local storage IP address',
+            title: "Settings",
+            message: "Change local storage IP address",
             inputs: [
                 {
-                    name: 'ipaddress',
-                    placeholder: 'Ex. 192.168.1.1'
+                    name: "ipaddress",
+                    placeholder: "Ex. 192.168.1.1"
                 }
             ],
             buttons: [
                 {
-                    text: 'Cancel',
+                    text: "Cancel",
                     handler: function (data) {
-                        console.log('Cancel clicked');
+                        console.log("Cancel clicked");
                     }
                 },
                 {
-                    text: 'Save',
+                    text: "Save",
                     handler: function (data) {
-                        _this.storage.set('ipaddress', data.ipaddress);
+                        localStorage.setItem("ipaddress", data.ipaddress);
                         console.log(JSON.stringify(data));
                         console.log(data.ipaddress);
                     }
@@ -1224,13 +1350,6 @@ var StorageProvider = /** @class */ (function () {
             ]
         });
         prompt.present();
-    };
-    StorageProvider.prototype.getLocalStorage = function () {
-        var _this = this;
-        return this.storage.get('ipaddress').then(function (name) {
-            _this.data = name;
-            console.log(name);
-        });
     };
     StorageProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -1241,7 +1360,104 @@ var StorageProvider = /** @class */ (function () {
 
 //# sourceMappingURL=storage.js.map
 
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FunctionsProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__local_storage_storage__ = __webpack_require__(46);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FunctionsProvider = /** @class */ (function () {
+    function FunctionsProvider(http, storage) {
+        this.http = http;
+        this.storage = storage;
+        this.localAddress = localStorage.getItem("ipaddress");
+    }
+    FunctionsProvider.prototype.displayZones = function (data) {
+        var url = "http://" +
+            this.localAddress +
+            "/watersystem/index.php/Welcome/search_zone/";
+        return this.http.post(url, JSON.stringify(data));
+    };
+    FunctionsProvider.prototype.getPayment = function (data) {
+        var url = "http://" +
+            this.localAddress +
+            "/watersystem/index.php/Welcome/paying_bill/";
+        return this.http.post(url, JSON.stringify(data));
+    };
+    FunctionsProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__local_storage_storage__["a" /* StorageProvider */]])
+    ], FunctionsProvider);
+    return FunctionsProvider;
+}());
+
+//# sourceMappingURL=functions.js.map
+
+/***/ }),
+
+/***/ 82:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrinterProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PrinterProvider = /** @class */ (function () {
+    function PrinterProvider(bluetoothSerial) {
+        this.bluetoothSerial = bluetoothSerial;
+    }
+    PrinterProvider.prototype.enableBluetooth = function () {
+        return this.bluetoothSerial.enable();
+    };
+    PrinterProvider.prototype.searchBluetooth = function () {
+        return this.bluetoothSerial.list();
+    };
+    PrinterProvider.prototype.connectBluetooth = function (address) {
+        return this.bluetoothSerial.connect(address);
+    };
+    PrinterProvider.prototype.printData = function (data) {
+        return this.bluetoothSerial.write(data);
+    };
+    PrinterProvider.prototype.disconnectBluetooth = function () {
+        return this.bluetoothSerial.disconnect();
+    };
+    PrinterProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */]])
+    ], PrinterProvider);
+    return PrinterProvider;
+}());
+
+//# sourceMappingURL=printer.js.map
+
 /***/ })
 
-},[211]);
+},[212]);
 //# sourceMappingURL=main.js.map

@@ -55947,17 +55947,11 @@ page-menu ion-title .s-2 {
 }
 
 page-menu ion-content {
-  background: #f4f4f4 !important;
+  background: #f0f2f5 !important;
 }
 
-page-menu ion-list-header {
-  font-family: "Open Sans", sans-serif;
-}
-
-page-menu .button-md,
-page-menu .button-ios {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+page-menu .btn-item {
+  background-color: #fff;
 }
 
 page-menu h1,
@@ -55966,17 +55960,13 @@ page-menu h2 {
 }
 
 page-menu h1 {
-  color: #fff !important;
-  font-weight: 400 !important;
+  color: #2c3e50 !important;
+  font-weight: 300 !important;
 }
 
 page-menu h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 500 !important;
-  color: #2c3e50 !important;
-}
-
-page-menu .title {
   color: #2c3e50 !important;
 }
 
@@ -55986,35 +55976,25 @@ page-menu .subtitle {
 
 page-menu p {
   font-weight: 400;
-  color: #fff !important;
   font-family: "Open Sans", sans-serif;
 }
 
-page-menu ion-label {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  color: #fff !important;
-}
-
-page-menu ion-col {
-  padding-bottom: 0 !important;
-}
-
-page-menu .item-transparent {
-  background-color: transparent !important;
-}
-
 page-menu .item-md.item-block .item-inner {
-  border: 0 !important;
+  border-bottom: 0 !important;
 }
 
-page-menu .item-md h1,
-page-menu .item-ios h1 {
-  font-size: 2rem;
+page-menu .item-md ion-thumbnail[item-start] {
+  margin: 8px 16px 8px 16px !important;
 }
 
-page-menu ion-icon {
-  font-size: 1.5em;
+page-menu img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
+  -o-object-position: top !important;
+  object-position: top !important;
+  border-radius: 3px;
 }
 
 page-menu .item-md,
@@ -56024,166 +56004,6 @@ page-menu .item-ios {
   border: 0 !important;
   border-radius: 3px;
   padding: 3px 0;
-}
-
-page-menu .item-1 {
-  background-color: #8786fb;
-}
-
-page-menu .item-1.activated {
-  background-color: #7776fa !important;
-}
-
-page-menu .item-2 {
-  background-color: #f88c8c;
-}
-
-page-menu .item-2.activated {
-  background-color: #f77c7c !important;
-}
-
-page-menu .item-3 {
-  background-color: #8cd5ca;
-}
-
-page-menu .item-3.activated {
-  background-color: #80d0c4 !important;
-}
-
-page-menu .item-4 {
-  background-color: #ffbb94;
-}
-
-page-menu .item-4.activated {
-  background-color: #ffb083 !important;
-}
-
-page-menu .item-5 {
-  background-color: #bca1f2;
-}
-
-page-menu .item-5.activated {
-  background-color: #b192f0 !important;
-}
-
-page-menu .item-6 {
-  background-color: #a0d69a;
-}
-
-page-menu .item-6.activated {
-  background-color: #95d18e !important;
-}
-
-page-menu .icon-1 {
-  color: #5352d9;
-}
-
-page-menu .icon-2 {
-  color: #db5d5e;
-}
-
-page-menu .icon-3 {
-  color: #40aa9b;
-}
-
-page-menu .icon-4 {
-  color: #e08365;
-}
-
-page-menu .icon-5 {
-  color: #875fd9;
-}
-
-page-menu .icon-6 {
-  color: #5ba453;
-}
-
-page-menu .button-md,
-page-menu .button-ios {
-  font-family: "Poppins", sans-serif;
-}
-
-page-menu .btn-1 {
-  border-top-left-radius: 64px !important;
-  border-bottom-left-radius: 64px !important;
-  border-color: #18bc9c;
-}
-
-page-menu .btn-2 {
-  border-top-right-radius: 64px !important;
-  border-bottom-right-radius: 64px !important;
-  border-color: #3498db;
-}
-
-page-menu .list-header-md,
-page-menu .list-header-ios {
-  border-top: none !important;
-}
-
-page-menu .list-md,
-page-menu .list-ios {
-  margin: 0 !important;
-}
-
-page-menu .item-md ion-thumbnail img {
-  width: 100%;
-  height: 100%;
-}
-
-page-menu .item-md ion-thumbnail {
-  width: 100px;
-  height: 100px;
-}
-
-page-menu .item-md ion-thumbnail[item-start] {
-  margin: 8px 0;
-}
-
-page-menu .item-md ion-icon[item-start],
-page-menu .item-ios ion-icon[item-start] {
-  color: #fff !important;
-  font-size: 33px !important;
-}
-
-page-menu .card-icon {
-  font-size: 70px !important;
-}
-
-page-menu .footer-md::before {
-  background-image: none;
-}
-
-page-menu .avatar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-page-menu .col-flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-page-menu img {
-  -o-object-fit: cover !important;
-  object-fit: cover !important;
-  -o-object-position: top !important;
-  object-position: top !important;
 }
 
 page-post ion-title {

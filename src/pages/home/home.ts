@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 import {
   NavController,
   LoadingController,
-  AlertController
+  AlertController,
+  
 } from "ionic-angular";
 import { StorageProvider } from "./../../providers/local-storage/storage";
 import { MenuPage } from "./../menu/menu";

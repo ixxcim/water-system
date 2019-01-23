@@ -17,6 +17,14 @@ export class FunctionsProvider {
     return this.http.post(url, JSON.stringify(data));
   }
 
+  displayPosts() {
+    let url =
+      "http://" +
+      this.localAddress +
+      "/watersystem/index.php/Welcome/display_post/";
+    return this.http.get(url);
+  }
+
   getPayment(data) {
     let url =
       "http://" +
