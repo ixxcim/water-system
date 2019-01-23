@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { AlertController, ToastController } from "ionic-angular";
-import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class StorageProvider {
@@ -8,7 +7,6 @@ export class StorageProvider {
   address: any;
   constructor(
     public alertCtrl: AlertController,
-    private storage: Storage,
     public toastCtrl: ToastController
   ) {}
 

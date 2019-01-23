@@ -29,14 +29,14 @@ page-menu {
   }
 
   h1 {
-    color: #2c3e50 !important;
+    color: #332e45 !important;
     font-weight: 300 !important;
   }
 
   h2 {
     font-family: $font-heading;
     font-weight: 500 !important;
-    color: #2c3e50 !important;
+    color: #332e45 !important;
   }
 
   .subtitle {
@@ -97,122 +97,4 @@ page-menu {
     border-radius: 3px;
     padding: 3px 0;
   }
-
-  // .item-1 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(135, 134, 251, 0.4),
-  //       rgba(135, 134, 251, 0.4)
-  //     ),
-  //     url("./../../assets/imgs/zone.jpeg");
-  //   background-color: #8786fb;
-  // }
-
-  // .item-1.activated {
-  //   background-color: #7776fa !important;
-  // }
-
-  // .item-2 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(248, 140, 140, 0.4),
-  //       rgba(248, 140, 140, 0.4)
-  //     ),
-  //     url("./../../assets/imgs/4.jpeg");
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-color: #f88c8c;
-  // }
-
-  // .item-2.activated {
-  //   background-color: #f77c7c !important;
-  // }
-
-  // .item-3 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(140, 213, 202, 0.4),
-  //       rgba(140, 213, 202, 0.4)
-  //     ),
-  //     url("./../../assets/imgs/3.jpeg");
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-color: #8cd5ca;
-  // }
-
-  // .item-3.activated {
-  //   background-color: #80d0c4 !important;
-  // }
-
-  // .item-4 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(255, 187, 148, 0.4),
-  //       rgba(255, 187, 148, 0.4)
-  //     ),
-  //     url("./../../assets/imgs/5.jpeg");
-  //   background-size: cover;
-  //   background-position: top;
-  //   background-color: #ffbb94;
-  // }
-
-  // .item-4.activated {
-  //   background-color: #ffb083 !important;
-  // }
-
-  // .item-5 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(188, 161, 242, 0.5),
-  //       rgba(188, 161, 242, 0.5)
-  //     ),
-  //     url("./../../assets/imgs/7.jpeg");
-  //   background-size: cover;
-  //   background-position: top;
-  //   background-color: #bca1f2;
-  // }
-
-  // .item-5.activated {
-  //   background-color: #b192f0 !important;
-  // }
-
-  // .item-6 {
-  //   background-image: linear-gradient(
-  //       to right bottom,
-  //       rgba(160, 214, 154, 0.4),
-  //       rgba(160, 214, 154, 0.4)
-  //     ),
-  //     url("./../../assets/imgs/6.jpeg");
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-color: #a0d69a;
-  // }
-
-  // .item-6.activated {
-  //   background-color: #95d18e !important;
-  // }
-
-  // .icon-1 {
-  //   color: #5352d9;
-  // }
-
-  // .icon-2 {
-  //   color: #db5d5e;
-  // }
-
-  // .icon-3 {
-  //   color: #40aa9b;
-  // }
-
-  // .icon-4 {
-  //   color: #e08365;
-  // }
-
-  // .icon-5 {
-  //   color: #875fd9;
-  // }
-
-  // .icon-6 {
-  //   color: #5ba453;
-  // }
 }
