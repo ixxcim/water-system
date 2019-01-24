@@ -645,7 +645,6 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -690,7 +689,7 @@ var ZoneDetailsPage = /** @class */ (function () {
         }
     };
     ZoneDetailsPage.prototype.getUser = function (data) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__["ZoneUserPage"], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__["a" /* ZoneUserPage */], {
             user: data
         });
         console.log(data);
@@ -711,9 +710,418 @@ var ZoneDetailsPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 164:
-/***/ (function(module, __webpack_exports__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneUserPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__ = __webpack_require__(167);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ZoneUserPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ZoneUserPage = /** @class */ (function () {
+    function ZoneUserPage(navCtrl, navParams, funtion, toastCtrl, alertCtrl, loadCtrl, printer) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.funtion = funtion;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.loadCtrl = loadCtrl;
+        this.printer = printer;
+        this.data = {};
+        this.user = navParams.get("user");
+    }
+    ZoneUserPage.prototype.ionViewDidLoad = function () {
+        console.log(this.user.fname);
+        console.log(this.user.userid);
+    };
+    ZoneUserPage.prototype.showToast = function (data) {
+        var toast = this.toastCtrl.create({
+            duration: 3000,
+            message: data,
+            position: "bottom"
+        });
+        toast.present();
+    };
+    ZoneUserPage.prototype.getPay = function () {
+        var _this = this;
+        var newData = {
+            pay: this.data["pay"],
+            userid: this.user.userid
+        };
+        this.funtion.getPayment(newData).subscribe(function (res) {
+            _this.data = res;
+        });
+        var printData = {
+            date: this.user.date,
+            userid: this.user.userid,
+            fname: this.user.fname,
+            lname: this.user.lname,
+            locationid: this.user.locationid,
+            worth: this.user.worth
+        };
+        this.funtion.getPrints(newData).subscribe(function (jhunes) {
+            _this.printed = jhunes[0];
+            console.log(_this.printed[0].balance);
+            var printItem = {
+                balance: _this.printed[0].balance,
+                count: _this.printed[0].count,
+                description: _this.printed[0].description,
+                fname: _this.printed[0].fname,
+                lname: _this.printed[0].lname,
+                measure: _this.printed[0].measure,
+                month: _this.printed[0].month,
+                price: _this.printed[0].price,
+                userid: _this.printed[0].userid,
+                worth: _this.printed[0].worth,
+                meterno: _this.printed[0].meterno
+            };
+            console.log(printItem);
+            var receipt = "";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            //secure space on header
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HARDWARE.HW_INIT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_4SQUARE;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "TAGOLOAN WATER DISTRICT";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "Tagoloan, 9001 Misamis Oriental";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += "STATEMENT OF ACCOUNT WATER BILL";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_RT;
+            receipt += "BILL MONTH: " + printItem.month;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "CONSUMER INFORMATION";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Name: " + printData.fname + printData.lname;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Account No: " + printData.userid;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Meter No.: " + printItem.meterno;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Type: " + printItem.description;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "(depends on what type the consumer has.)";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Starting Rate: " + printItem.price;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "(depends on what type the consumer has.)";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "CONSUMPTION DETAILS";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Period Covered: " + printItem.month;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Previous Reading: " + printItem.measure;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Present Reading: " + printItem.measure;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Bill Amount: " + printItem.worth;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += "Note: PENALTY FOR LATE PAYMENT";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Penalty Amount: " + printItem.balance;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Arrears: " + printItem.balance;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "OVER DUE AMOUNT: " + printItem.month;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "DUE DATE: " + printItem.month;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Note:";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt +=
+                "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Meter Reader: " + printData.locationid;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
+            receipt += "Date and Time of read: " + printItem.month;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HORIZONTAL_LINE.HR_58MM;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_2WIDTH;
+            receipt += "THANK YOU";
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
+            receipt += "©tagoloanwaterdistrict";
+            //secure space on footer
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+            var alert = _this.alertCtrl.create({
+                title: "Select your printer",
+                buttons: [
+                    {
+                        text: "Cancel",
+                        role: "cancel"
+                    },
+                    {
+                        text: "Select printer",
+                        handler: function (device) {
+                            if (!device) {
+                                _this.showToast("Select a printer!");
+                                return false;
+                            }
+                            console.log(device);
+                            _this.print(device, receipt);
+                        }
+                    }
+                ]
+            });
+            _this.printer
+                .enableBluetooth()
+                .then(function () {
+                _this.printer
+                    .searchBluetooth()
+                    .then(function (devices) {
+                    devices.forEach(function (device) {
+                        console.log("Devices: ", JSON.stringify(device));
+                        alert.addInput({
+                            name: "printer",
+                            value: device.address,
+                            label: device.name,
+                            type: "radio"
+                        });
+                    });
+                    alert.present();
+                })
+                    .catch(function (error) {
+                    console.log(error);
+                    _this.showToast("There was an error connecting the printer, please try again!");
+                });
+            })
+                .catch(function (error) {
+                console.log(error);
+                _this.showToast("Error activating bluetooth, please try again!");
+            });
+        });
+    };
+    ZoneUserPage.prototype.noSpecialChars = function (string) {
+        var translate = {
+            à: "a",
+            á: "a",
+            â: "a",
+            ã: "a",
+            ä: "a",
+            å: "a",
+            æ: "a",
+            ç: "c",
+            è: "e",
+            é: "e",
+            ê: "e",
+            ë: "e",
+            ì: "i",
+            í: "i",
+            î: "i",
+            ï: "i",
+            ð: "d",
+            ñ: "n",
+            ò: "o",
+            ó: "o",
+            ô: "o",
+            õ: "o",
+            ö: "o",
+            ø: "o",
+            ù: "u",
+            ú: "u",
+            û: "u",
+            ü: "u",
+            ý: "y",
+            þ: "b",
+            ÿ: "y",
+            ŕ: "r",
+            À: "A",
+            Á: "A",
+            Â: "A",
+            Ã: "A",
+            Ä: "A",
+            Å: "A",
+            Æ: "A",
+            Ç: "C",
+            È: "E",
+            É: "E",
+            Ê: "E",
+            Ë: "E",
+            Ì: "I",
+            Í: "I",
+            Î: "I",
+            Ï: "I",
+            Ð: "D",
+            Ñ: "N",
+            Ò: "O",
+            Ó: "O",
+            Ô: "O",
+            Õ: "O",
+            Ö: "O",
+            Ø: "O",
+            Ù: "U",
+            Ú: "U",
+            Û: "U",
+            Ü: "U",
+            Ý: "Y",
+            Þ: "B",
+            Ÿ: "Y",
+            Ŕ: "R"
+        }, translate_re = /[àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÝÞŸŔŔ]/gim;
+        return string.replace(translate_re, function (match) {
+            return translate[match];
+        });
+    };
+    ZoneUserPage.prototype.print = function (device, data) {
+        var _this = this;
+        console.log("Device mac: ", device);
+        console.log("Data: ", data);
+        var load = this.loadCtrl.create({
+            content: "Printing..."
+        });
+        load.present();
+        this.printer.connectBluetooth(device).subscribe(function (status) {
+            console.log(status);
+            _this.printer
+                .printData(_this.noSpecialChars(data))
+                .then(function (printStatus) {
+                console.log(printStatus);
+                var alert = _this.alertCtrl.create({
+                    title: "Successful print!",
+                    buttons: ["Ok"]
+                });
+                load.dismiss();
+                alert.present();
+                _this.printer.disconnectBluetooth();
+            })
+                .catch(function (error) {
+                console.log(error);
+                var alert = _this.alertCtrl.create({
+                    title: "There was an error printing, please try again!",
+                    buttons: ["Ok"]
+                });
+                load.dismiss();
+                alert.present();
+                _this.printer.disconnectBluetooth();
+            });
+        }, function (error) {
+            console.log(error);
+            var alert = _this.alertCtrl.create({
+                title: "There was an error connecting to the printer, please try again!",
+                buttons: ["Ok"]
+            });
+            load.dismiss();
+            alert.present();
+        });
+    };
+    ZoneUserPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: "page-zone-user",template:/*ion-inline-start:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title text-capitalize>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-icon name="ios-contact" item-start></ion-icon>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Read</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__["a" /* PrinterProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__["a" /* PrinterProvider */]) === "function" && _g || Object])
+    ], ZoneUserPage);
+    return ZoneUserPage;
+    var _a, _b, _c, _d, _e, _f, _g;
+}());
+
 //# sourceMappingURL=zone-user.js.map
 
 /***/ }),
@@ -917,7 +1325,6 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_post_post__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_print_print__ = __webpack_require__(110);
@@ -963,7 +1370,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["ZoneUserPage"],
+                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]
@@ -992,7 +1399,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_menu_menu__["a" /* MenuPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_zone_zone__["a" /* ZonePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_zone_details_zone_details__["a" /* ZoneDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["ZoneUserPage"],
+                __WEBPACK_IMPORTED_MODULE_13__pages_zone_user_zone_user__["a" /* ZoneUserPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_post_post__["a" /* PostPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_edit_edit__["a" /* EditPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_print_print__["a" /* PrintPage */]

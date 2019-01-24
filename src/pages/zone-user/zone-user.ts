@@ -24,6 +24,8 @@ import { commands } from "./../../providers/printer/printer-commands";
 export class ZoneUserPage {
   user: any;
   data = {};
+  printed: any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,8 +40,6 @@ export class ZoneUserPage {
 
   ionViewDidLoad() {
     console.log(this.user.fname);
-
-    this.user.fname;
     console.log(this.user.userid);
   }
 
@@ -52,31 +52,15 @@ export class ZoneUserPage {
     toast.present();
   }
 
-  getPrinted(data) {
-    let item = data;
-    this.getPay(item);
-    console.log(item);
-  }
-
-  getPay(data) {
+  getPay() {
     let newData = {
       pay: this.data["pay"],
       userid: this.user.userid
     };
 
-    let printItem = {
-      balance: data.balance,
-      count: data.count,
-      description: data.description,
-      fname: data.fname,
-      lname: data.lname,
-      measure: data.measure,
-      month: data.month,
-      price: data.price,
-      userid: data.userid,
-      worth: data.worth,
-      meterno: data.meterno
-    };
+    this.funtion.getPayment(newData).subscribe(res => {
+      this.data = res;
+    });
 
     let printData = {
       date: this.user.date,
@@ -87,219 +71,232 @@ export class ZoneUserPage {
       worth: this.user.worth
     };
 
-    this.funtion.getPayment(newData).subscribe(res => {
-      this.data = res;
-    });
+    this.funtion.getPrints(newData).subscribe(jhunes => {
+      this.printed = jhunes[0];
 
-    this.funtion.getPrints(newData).subscribe(res => {
-      this.data = res[0];
-      this.getPrinted(this.data);
-    });
+      console.log(this.printed[0].balance);
 
-    let receipt = "";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    //secure space on header
-    receipt += commands.HARDWARE.HW_INIT;
-    receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "TAGOLOAN WATER DISTRICT";
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "Tagoloan, 9001 Misamis Oriental";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += "STATEMENT OF ACCOUNT WATER BILL";
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.HORIZONTAL_LINE.HR_58MM;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_RT;
-    receipt += "BILL MONTH: " + printItem.month;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "CONSUMER INFORMATION";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Name: " + printData.fname + printData.lname;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Account No: " + printData.userid;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Meter No.: " + printItem.meterno;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Type: " + printItem.description;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "(depends on what type the consumer has.)";
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Starting Rate: " + printItem.price;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "(depends on what type the consumer has.)";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.HORIZONTAL_LINE.HR_58MM;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "CONSUMPTION DETAILS";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Period Covered: " + printItem.month;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Previous Reading: " + printItem.measure;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Present Reading: " + printItem.measure;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Bill Amount: " + printItem.worth;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.HORIZONTAL_LINE.HR_58MM;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += "Note: PENALTY FOR LATE PAYMENT";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Penalty Amount: " + printItem.balance;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Arrears: " + printItem.balance;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "OVER DUE AMOUNT: " + printItem.month;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "DUE DATE: " + printItem.month;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.HORIZONTAL_LINE.HR_58MM;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Note:";
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt +=
-      "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Meter Reader: " + printData.locationid;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Date and Time of read: " + printItem.month;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.HORIZONTAL_LINE.HR_58MM;
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
-    receipt += "THANK YOU";
-    receipt += commands.EOL;
-    receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-    receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
-    receipt += "©tagoloanwaterdistrict";
-    //secure space on footer
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
-    receipt += commands.EOL;
+      let printItem = {
+        balance: this.printed[0].balance,
+        count: this.printed[0].count,
+        description: this.printed[0].description,
+        fname: this.printed[0].fname,
+        lname: this.printed[0].lname,
+        measure: this.printed[0].measure,
+        month: this.printed[0].month,
+        price: this.printed[0].price,
+        userid: this.printed[0].userid,
+        worth: this.printed[0].worth,
+        meterno: this.printed[0].meterno
+      };
 
-    let alert = this.alertCtrl.create({
-      title: "Select your printer",
-      buttons: [
-        {
-          text: "Cancel",
-          role: "cancel"
-        },
-        {
-          text: "Select printer",
-          handler: device => {
-            if (!device) {
-              this.showToast("Select a printer!");
-              return false;
+      console.log(printItem);
+
+      let receipt = "";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      //secure space on header
+      receipt += commands.HARDWARE.HW_INIT;
+      receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "TAGOLOAN WATER DISTRICT";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "Tagoloan, 9001 Misamis Oriental";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += "STATEMENT OF ACCOUNT WATER BILL";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.HORIZONTAL_LINE.HR_58MM;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_RT;
+      receipt += "BILL MONTH: " + printItem.month;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "CONSUMER INFORMATION";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Name: " + printData.fname + printData.lname;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Account No: " + printData.userid;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Meter No.: " + printItem.meterno;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Type: " + printItem.description;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "(depends on what type the consumer has.)";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Starting Rate: " + printItem.price;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "(depends on what type the consumer has.)";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.HORIZONTAL_LINE.HR_58MM;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "CONSUMPTION DETAILS";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Period Covered: " + printItem.month;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Previous Reading: " + printItem.measure;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Present Reading: " + printItem.measure;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Bill Amount: " + printItem.worth;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.HORIZONTAL_LINE.HR_58MM;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "Note: PENALTY FOR LATE PAYMENT";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Penalty Amount: " + printItem.balance;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Arrears: " + printItem.balance;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "OVER DUE AMOUNT: " + printItem.month;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "DUE DATE: " + printItem.month;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.HORIZONTAL_LINE.HR_58MM;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Note:";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt +=
+        "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Meter Reader: " + printData.locationid;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Date and Time of read: " + printItem.month;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.HORIZONTAL_LINE.HR_58MM;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.TEXT_FORMAT.TXT_2WIDTH;
+      receipt += "THANK YOU";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
+      receipt += "©tagoloanwaterdistrict";
+      //secure space on footer
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+
+      let alert = this.alertCtrl.create({
+        title: "Select your printer",
+        buttons: [
+          {
+            text: "Cancel",
+            role: "cancel"
+          },
+          {
+            text: "Select printer",
+            handler: device => {
+              if (!device) {
+                this.showToast("Select a printer!");
+                return false;
+              }
+              console.log(device);
+              this.print(device, receipt);
             }
-            console.log(device);
-            this.print(device, receipt);
           }
-        }
-      ]
-    });
-
-    this.printer
-      .enableBluetooth()
-      .then(() => {
-        this.printer
-          .searchBluetooth()
-          .then(devices => {
-            devices.forEach(device => {
-              console.log("Devices: ", JSON.stringify(device));
-              alert.addInput({
-                name: "printer",
-                value: device.address,
-                label: device.name,
-                type: "radio"
-              });
-            });
-            alert.present();
-          })
-          .catch(error => {
-            console.log(error);
-            this.showToast(
-              "There was an error connecting the printer, please try again!"
-            );
-          });
-      })
-      .catch(error => {
-        console.log(error);
-        this.showToast("Error activating bluetooth, please try again!");
+        ]
       });
+
+      this.printer
+        .enableBluetooth()
+        .then(() => {
+          this.printer
+            .searchBluetooth()
+            .then(devices => {
+              devices.forEach(device => {
+                console.log("Devices: ", JSON.stringify(device));
+                alert.addInput({
+                  name: "printer",
+                  value: device.address,
+                  label: device.name,
+                  type: "radio"
+                });
+              });
+              alert.present();
+            })
+            .catch(error => {
+              console.log(error);
+              this.showToast(
+                "There was an error connecting the printer, please try again!"
+              );
+            });
+        })
+        .catch(error => {
+          console.log(error);
+          this.showToast("Error activating bluetooth, please try again!");
+        });
+    });
   }
 
   noSpecialChars(string) {

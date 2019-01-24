@@ -56101,3 +56101,7 @@ page-zone-user ion-input ::-ms-input-placeholder {
 page-zone-user ion-input ::placeholder {
   letter-spacing: 1px;
 }
+
+page-zone-user .d-none {
+  display: none;
+}
