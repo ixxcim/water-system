@@ -21,14 +21,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       // let status bar overlay webview
 
-      // if (this.rootPage) {
-      //   statusBar.backgroundColorByHexString('#2e4058');
-      //   statusBar.show();
-      // } else {
-      //   statusBar.backgroundColorByHexString('#135589');
-      //   statusBar.show();
-      // }
-
       statusBar.overlaysWebView(true);
       statusBar.backgroundColorByHexString("#2c3e50");
       statusBar.show();
