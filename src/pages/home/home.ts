@@ -1,5 +1,9 @@
 import { Component } from "@angular/core";
-import { NavController, LoadingController } from "ionic-angular";
+import {
+  NavController,
+  LoadingController,
+  AlertController
+} from "ionic-angular";
 import { StorageProvider } from "./../../providers/local-storage/storage";
 import { MenuPage } from "./../menu/menu";
 
@@ -11,6 +15,7 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
+    public alertCtrl: AlertController,
     public storage: StorageProvider
   ) {}
 
@@ -18,7 +23,16 @@ export class HomePage {
     this.storage.setLocalStorage();
   }
 
-  logForm() {
-    this.navCtrl.push(MenuPage);
+  loginUser() {
+    if (localStorage.getItem("ipaddress") === null) {
+      let alert = this.alertCtrl.create({
+        title: "Login error",
+        message: "Please input value in settings.",
+        buttons: ["Ok"]
+      });
+      alert.present();
+    } else {
+      this.navCtrl.push(MenuPage);
+    }
   }
 }

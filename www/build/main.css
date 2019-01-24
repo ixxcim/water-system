@@ -56044,7 +56044,8 @@ page-zone-details h2 {
   font-family: "Poppins", sans-serif;
 }
 
-page-zone-details p {
+page-zone-details p,
+page-zone-details h1 {
   font-family: "Open Sans", sans-serif;
 }
 

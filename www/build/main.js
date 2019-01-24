@@ -668,11 +668,12 @@ var ZoneDetailsPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.modalCtrl = modalCtrl;
-        this.user = navParams.get('user');
+        this.user = navParams.get("user");
         this.initializeItems();
     }
     ZoneDetailsPage.prototype.initializeItems = function () {
-        this.data = this.navParams.get('data');
+        this.data = this.navParams.get("data");
+        console.log(this.data.length);
     };
     ZoneDetailsPage.prototype.getItems = function (ev) {
         // Reset items back to all of the items
@@ -680,26 +681,27 @@ var ZoneDetailsPage = /** @class */ (function () {
         // set val to the value of the ev target
         var val = ev.target.value;
         // if the value is an empty string don't filter the items
-        if (val && val.trim() != '') {
+        if (val && val.trim() != "") {
             this.data = this.data.filter(function (datas) {
                 console.log(datas.fname);
-                return (datas.userid.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                return datas.userid.toLowerCase().indexOf(val.toLowerCase()) > -1;
             });
         }
     };
     ZoneDetailsPage.prototype.getUser = function (data) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__zone_user_zone_user__["a" /* ZoneUserPage */], {
-            user: data,
+            user: data
         });
         console.log(data);
     };
     ZoneDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-zone-details',template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/'<!--\n  Generated template for the ZoneDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user }}</ion-title>\n  </ion-navbar>\n  <ion-searchbar\n    (ionInput)="getItems($event)"\n    placeholder="Search by ID (Ex. 011-123-456)"\n  ></ion-searchbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <button ion-item *ngFor="let datas of data" (click)="getUser(datas)">\n      <h2 text-capitalize>{{ datas.fname }} {{ datas.lname }}</h2>\n      <h3>{{ datas.userid }}</h3>\n      <p>{{ datas.contact }}</p>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/,
+            selector: "page-zone-details",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/'<!--\n  Generated template for the ZoneDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title>{{ user }}</ion-title>\n  </ion-navbar>\n  <ion-searchbar\n    (ionInput)="getItems($event)"\n    placeholder="Search by ID (Ex. 011-123-456)"\n  ></ion-searchbar>\n</ion-header>\n\n<ion-content padding-right>\n  <div *ngIf="data.length === 0" text-center><h1>No data available</h1></div>\n  <ion-list>\n    <button ion-item *ngFor="let datas of data" (click)="getUser(datas)">\n      <h2 text-capitalize>{{ datas.fname }} {{ datas.lname }}</h2>\n      <h3>{{ datas.userid }}</h3>\n      <p>{{ datas.contact }}</p>\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-details\zone-details.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object])
     ], ZoneDetailsPage);
     return ZoneDetailsPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=zone-details.js.map
@@ -761,12 +763,6 @@ var ZoneUserPage = /** @class */ (function () {
         });
         toast.present();
     };
-    // test() {
-    //   this.funtion.displayPrints().subscribe(res => {
-    //     this.data = res;
-    //     console.log(this.data);
-    //   });
-    // }
     ZoneUserPage.prototype.getPay = function (data) {
         var _this = this;
         var newData = {
@@ -789,6 +785,7 @@ var ZoneUserPage = /** @class */ (function () {
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
+        //secure space on header
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].HARDWARE.HW_INIT;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_4SQUARE;
         receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_CT;
@@ -1100,7 +1097,7 @@ var ZoneUserPage = /** @class */ (function () {
     };
     ZoneUserPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-zone-user",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title text-capitalize>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-icon name="ios-contact" item-start></ion-icon>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Pay</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
+            selector: "page-zone-user",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/'<!--\n  Generated template for the ZoneUserPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="background">\n    <ion-title text-capitalize>{{ user.fname }} {{ user.lname }} </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding-right>\n  <ion-list>\n    <ion-item *ngIf="!user.measure">\n      <ion-icon name="sad" item-start></ion-icon>\n      <h2>No data available</h2>\n      <p>Please contact to our office</p>\n    </ion-item>\n\n    <ion-item *ngIf="user.measure">\n      <ion-icon name="ios-contact" item-start></ion-icon>\n      <h2>{{ user.month }}</h2>\n      <h3>{{ user.measure }}</h3>\n      <p>{{ user.acrylic }}</p>\n    </ion-item>\n    <form (ngSubmit)="getPay()">\n      <ion-item>\n        <ion-label>Pay</ion-label>\n        <ion-input type="number" [(ngModel)]="data.pay" name="pay"></ion-input>\n      </ion-item>\n\n      <button\n        ion-button\n        color="primary-1"\n        float-right\n        margin-top\n        text-capitalize\n        type="submit"\n      >\n        read meter\n      </button>\n    </form>\n\n    <button\n      ion-button\n      color="primary-1"\n      float-right\n      margin-top\n      text-capitalize\n      (click)="test()"\n    >\n      test\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\zone-user\zone-user.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_functions_functions__["a" /* FunctionsProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__["a" /* PrinterProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_printer_printer__["a" /* PrinterProvider */]) === "function" && _g || Object])
     ], ZoneUserPage);
@@ -1240,26 +1237,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, loadingCtrl, storage) {
+    function HomePage(navCtrl, loadingCtrl, alertCtrl, storage) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
         this.storage = storage;
     }
     HomePage.prototype.checkSettings = function () {
         this.storage.setLocalStorage();
     };
-    HomePage.prototype.logForm = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__menu_menu__["a" /* MenuPage */]);
+    HomePage.prototype.loginUser = function () {
+        if (localStorage.getItem("ipaddress") === null) {
+            var alert = this.alertCtrl.create({
+                title: "Login error",
+                message: "Please input value in settings.",
+                buttons: ["Ok"]
+            });
+            alert.present();
+        }
+        else {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__menu_menu__["a" /* MenuPage */]);
+        }
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-home",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title"><span>water</span>System</h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n      (click)="checkSettings()"\n\n    >\n\n      Change Settings\n\n    </button>\n\n    <div padding-left padding-right text-center>\n\n      <button\n\n        text-capitalize\n\n        ion-button\n\n        block\n\n        color="secondary-2"\n\n        (click)="logForm()"\n\n      >\n\n        Log in\n\n      </button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/
+            selector: "page-home",template:/*ion-inline-start:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/'<ion-content padding>\n\n  <div text-center margin-vertical class="heading">\n\n    <h1 class="heading__title"><span>water</span>System</h1>\n\n    <p text-capitalize class="heading__subtitle ">mobile billing application</p>\n\n  </div>\n\n\n\n  <div margin-top>\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="text" placeholder="Username"></ion-input>\n\n        <ion-label margin-left\n\n          ><ion-icon name="ios-contact"></ion-icon\n\n        ></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list inset>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n        <ion-label margin-left><ion-icon name="ios-key"></ion-icon></ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <button\n\n      class="btn-link"\n\n      ion-button\n\n      small\n\n      clear\n\n      float-right\n\n      margin-bottom\n\n      text-capitalize\n\n      color="link"\n\n      (click)="checkSettings()"\n\n    >\n\n      Change Settings\n\n    </button>\n\n    <div padding-left padding-right text-center>\n\n      <button\n\n        text-capitalize\n\n        ion-button\n\n        block\n\n        color="secondary-2"\n\n        (click)="loginUser()"\n\n      >\n\n        Log in\n\n      </button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\acer\Desktop\water-system\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_local_storage_storage__["a" /* StorageProvider */]) === "function" && _d || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -1538,7 +1545,7 @@ var FunctionsProvider = /** @class */ (function () {
     FunctionsProvider.prototype.displayPrints = function () {
         var url = "http://" +
             this.localAddress +
-            "/watersystem/index.php/Welcome/print_zone/";
+            "/watersystem/index.php/Welcome/paying_bill/";
         return this.http.get(url);
     };
     FunctionsProvider.prototype.getPayment = function (data) {

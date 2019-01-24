@@ -1,24 +1,24 @@
 page-zone-details {
-    ion-title {
-        font-family: $font-heading;
-    }
-      
-    h2 {
-        font-family: $font-heading;
-    }
+  ion-title {
+    font-family: $font-heading;
+  }
 
-    p {
-        font-family: $font-body;
-    }
+  h2 {
+    font-family: $font-heading;
+  }
 
-    .item-md ion-icon[item-end],
-    .item-ios ion-icon[item-end] {
-      color: #95a5a6 !important;
-    }
+  p,
+  h1 {
+    font-family: $font-body;
+  }
 
-    .searchbar-md,
-    .searchbar-ios {
-        background: #2c3e50 !important;
-    }
-  
+  .item-md ion-icon[item-end],
+  .item-ios ion-icon[item-end] {
+    color: #95a5a6 !important;
+  }
+
+  .searchbar-md,
+  .searchbar-ios {
+    background: #2c3e50 !important;
+  }
 }

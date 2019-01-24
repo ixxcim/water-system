@@ -52,13 +52,6 @@ export class ZoneUserPage {
     toast.present();
   }
 
-  // test() {
-  //   this.funtion.displayPrints().subscribe(res => {
-  //     this.data = res;
-  //     console.log(this.data);
-  //   });
-  // }
-
   getPay(data) {
     let newData = {
       pay: this.data["pay"],
@@ -83,6 +76,7 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.EOL;
+    //secure space on header
     receipt += commands.HARDWARE.HW_INIT;
     receipt += commands.TEXT_FORMAT.TXT_4SQUARE;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;

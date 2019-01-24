@@ -27,10 +27,10 @@ export class FunctionsProvider {
 
   displayPrints() {
     let url =
-    "http://" +
-    this.localAddress +
-    "/watersystem/index.php/Welcome/print_zone/";
-  return this.http.get(url);
+      "http://" +
+      this.localAddress +
+      "/watersystem/index.php/Welcome/paying_bill/";
+    return this.http.get(url);
   }
 
   getPayment(data) {
