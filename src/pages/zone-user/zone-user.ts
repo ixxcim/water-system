@@ -87,8 +87,32 @@ export class ZoneUserPage {
         price: this.printed[0].price,
         userid: this.printed[0].userid,
         worth: this.printed[0].worth,
-        meterno: this.printed[0].meterno
+        meterno: this.printed[0].meterno,
+        dateTime: new Date()
       };
+
+      var monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+
+      let date = this.printed[0].month;
+      let dateArr = date.split(" ");
+      let year = date[0];
+      let month = date[1];
+      let day = dateArr[2] + 7;
+      let result = year + month + day;
+      const fullDate = result.replace(" ", "-");
 
       console.log(printItem);
 
@@ -138,19 +162,15 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Type: " + printItem.description;
+      receipt += "Meter Type: " + printItem.meterno;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-      receipt += "(depends on what type the consumer has.)";
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Type: " + printItem.description;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
       receipt += "Starting Rate: " + printItem.price;
-      receipt += commands.EOL;
-      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
-      receipt += "(depends on what type the consumer has.)";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -168,11 +188,11 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Previous Reading: " + printItem.measure;
+      receipt += "Previous Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Present Reading: " + printItem.measure;
+      receipt += "Present Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
@@ -190,7 +210,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Penalty Amount: " + printItem.balance;
+      receipt += "Penalty Amount: 5";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
@@ -198,11 +218,11 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "OVER DUE AMOUNT: " + printItem.month;
+      receipt += "OVER DUE AMOUNT: " + (printItem.worth + 5);
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "DUE DATE: " + printItem.month;
+      receipt += "DUE DATE: " + fullDate;
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -221,11 +241,11 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Meter Reader: " + printData.locationid;
+      receipt += "Meter Reader: ADMIN";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Date and Time of read: " + printItem.month;
+      receipt += "Date and Time of read: " + printItem.dateTime;
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
