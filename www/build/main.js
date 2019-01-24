@@ -797,12 +797,19 @@ var ZoneUserPage = /** @class */ (function () {
                 meterno: _this.printed[0].meterno,
                 dateTime: new Date()
             };
+            // Calculate day
             var date = _this.printed[0].month;
             var dateArr = date.split("-");
-            var year = date[0];
-            var month = date[1];
-            var day = dateArr[2] + 7;
-            var fullDate = year + "-" + month + "-" + day;
+            var year = dateArr[0];
+            var month = dateArr[1];
+            var day = dateArr[2];
+            var int2 = parseInt(day, 10);
+            var addDay = int2 + 7;
+            var fullDate = year + "-" + month + "-" + addDay;
+            // Wroth + 5
+            var worth = printItem.worth;
+            var int = parseInt(worth, 10);
+            var parseData = int + 5;
             console.log(printItem);
             var receipt = "";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
@@ -906,7 +913,7 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "OVER DUE AMOUNT: " + (printItem.worth + 5);
+            receipt += "OVER DUE AMOUNT: " + parseData;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
@@ -924,7 +931,7 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_BOLD_ON;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
             receipt +=
-                "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+                "Disconnection follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;

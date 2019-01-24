@@ -91,12 +91,20 @@ export class ZoneUserPage {
         dateTime: new Date()
       };
 
+      // Calculate day
       let date = this.printed[0].month;
       let dateArr = date.split("-");
-      let year = date[0];
-      let month = date[1];
-      let day = dateArr[2] + 7;
-      const fullDate = year + "-" + month + "-" + day;
+      let year = dateArr[0];
+      let month = dateArr[1];
+      let day = dateArr[2];
+      let int2 = parseInt(day, 10);
+      let addDay = int2 + 7;
+      const fullDate = year + "-" + month + "-" + addDay;
+
+      // Wroth + 5
+      let worth = printItem.worth;
+      let int = parseInt(worth, 10);
+      let parseData = int + 5;
 
       console.log(printItem);
 
@@ -202,7 +210,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "OVER DUE AMOUNT: " + (printItem.worth + 5);
+      receipt += "OVER DUE AMOUNT: " + parseData;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
@@ -220,7 +228,7 @@ export class ZoneUserPage {
       receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
       receipt +=
-        "Disconnections follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
+        "Disconnection follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
