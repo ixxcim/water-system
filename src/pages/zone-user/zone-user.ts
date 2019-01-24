@@ -91,28 +91,12 @@ export class ZoneUserPage {
         dateTime: new Date()
       };
 
-      var monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ];
-
       let date = this.printed[0].month;
-      let dateArr = date.split(" ");
+      let dateArr = date.split("-");
       let year = date[0];
       let month = date[1];
       let day = dateArr[2] + 7;
-      let result = year + month + day;
-      const fullDate = result.replace(" ", "-");
+      const fullDate = year + "-" + month + "-" + day;
 
       console.log(printItem);
 
