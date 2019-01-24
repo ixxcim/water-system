@@ -795,6 +795,7 @@ var ZoneUserPage = /** @class */ (function () {
                 userid: _this.printed[0].userid,
                 worth: _this.printed[0].worth,
                 meterno: _this.printed[0].meterno,
+                meterbrand: _this.printed[0].meterbrand,
                 dateTime: new Date()
             };
             // Calculate day
@@ -857,7 +858,7 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "Meter Type: " + printItem.meterno;
+            receipt += "Meter Type: " + printItem.meterbrand;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
@@ -865,7 +866,7 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "Starting Rate: " + printItem.price;
+            receipt += "Starting Rate: " + printItem.price + ".00";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
@@ -891,7 +892,7 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "Bill Amount: " + printItem.worth;
+            receipt += "Bill Amount: " + printItem.worth + ".00";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
@@ -905,11 +906,11 @@ var ZoneUserPage = /** @class */ (function () {
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "Penalty Amount: 5";
+            receipt += "Penalty Amount: 5.00";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;
-            receipt += "Arrears: " + printItem.balance;
+            receipt += "Arrears: " + printItem.balance + ".00";
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].EOL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_NORMAL;
             receipt += __WEBPACK_IMPORTED_MODULE_4__providers_printer_printer_commands__["a" /* commands */].TEXT_FORMAT.TXT_ALIGN_LT;

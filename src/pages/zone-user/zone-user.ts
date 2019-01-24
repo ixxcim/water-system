@@ -88,6 +88,7 @@ export class ZoneUserPage {
         userid: this.printed[0].userid,
         worth: this.printed[0].worth,
         meterno: this.printed[0].meterno,
+        meterbrand: this.printed[0].meterbrand,
         dateTime: new Date()
       };
 
@@ -154,7 +155,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Meter Type: " + printItem.meterno;
+      receipt += "Meter Type: " + printItem.meterbrand;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
@@ -162,7 +163,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Starting Rate: " + printItem.price;
+      receipt += "Starting Rate: " + printItem.price + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -188,7 +189,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Bill Amount: " + printItem.worth;
+      receipt += "Bill Amount: " + printItem.worth + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -202,11 +203,11 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Penalty Amount: 5";
+      receipt += "Penalty Amount: 5.00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Arrears: " + printItem.balance;
+      receipt += "Arrears: " + printItem.balance + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
