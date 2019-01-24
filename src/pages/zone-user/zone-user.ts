@@ -52,10 +52,30 @@ export class ZoneUserPage {
     toast.present();
   }
 
+  getPrinted(data) {
+    let item = data;
+    this.getPay(item);
+    console.log(item);
+  }
+
   getPay(data) {
     let newData = {
       pay: this.data["pay"],
       userid: this.user.userid
+    };
+
+    let printItem = {
+      balance: data.balance,
+      count: data.count,
+      description: data.description,
+      fname: data.fname,
+      lname: data.lname,
+      measure: data.measure,
+      month: data.month,
+      price: data.price,
+      userid: data.userid,
+      worth: data.worth,
+      meterno: data.meterno
     };
 
     let printData = {
@@ -69,7 +89,11 @@ export class ZoneUserPage {
 
     this.funtion.getPayment(newData).subscribe(res => {
       this.data = res;
-      console.log(res);
+    });
+
+    this.funtion.getPrints(newData).subscribe(res => {
+      this.data = res[0];
+      this.getPrinted(this.data);
     });
 
     let receipt = "";
@@ -96,7 +120,7 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_RT;
-    receipt += "BILL MONTH: " + "January 2019";
+    receipt += "BILL MONTH: " + printItem.month;
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -114,11 +138,11 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Meter No.: " + printData.fname + printData.lname;
+    receipt += "Meter No.: " + printItem.meterno;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Type: " + printData.fname + printData.lname;
+    receipt += "Type: " + printItem.description;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
@@ -126,7 +150,7 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Starting Rate: " + printData.fname + printData.lname;
+    receipt += "Starting Rate: " + printItem.price;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
@@ -144,19 +168,19 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Period Covered: " + printData.locationid;
+    receipt += "Period Covered: " + printItem.month;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Previous Reading: " + printData.locationid;
+    receipt += "Previous Reading: " + printItem.measure;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Present Reading: " + printData.locationid;
+    receipt += "Present Reading: " + printItem.measure;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Bill Amount: " + printData.locationid;
+    receipt += "Bill Amount: " + printItem.worth;
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -170,19 +194,19 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Penalty Amount: " + printData.locationid;
+    receipt += "Penalty Amount: " + printItem.balance;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Arrears: " + printData.locationid;
+    receipt += "Arrears: " + printItem.balance;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "OVER DUE AMOUNT: " + printData.locationid;
+    receipt += "OVER DUE AMOUNT: " + printItem.month;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "DUE DATE: " + printData.locationid;
+    receipt += "DUE DATE: " + printItem.month;
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -205,7 +229,7 @@ export class ZoneUserPage {
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;
     receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-    receipt += "Date and Time of read: " + printData.locationid;
+    receipt += "Date and Time of read: " + printItem.month;
     receipt += commands.EOL;
     receipt += commands.EOL;
     receipt += commands.TEXT_FORMAT.TXT_NORMAL;

@@ -25,12 +25,12 @@ export class FunctionsProvider {
     return this.http.get(url);
   }
 
-  displayPrints() {
+  getPrints(data) {
     let url =
       "http://" +
       this.localAddress +
-      "/watersystem/index.php/Welcome/paying_bill/";
-    return this.http.get(url);
+      "/watersystem/index.php/Welcome/print_zone/";
+    return this.http.post(url, JSON.stringify(data));
   }
 
   getPayment(data) {
