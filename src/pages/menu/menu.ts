@@ -1,5 +1,10 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  LoadingController
+} from "ionic-angular";
 import { ZonePage } from "./../zone/zone";
 import { PostPage } from "./../post/post";
 import { EditPage } from "./../edit/edit";
@@ -22,7 +27,8 @@ export class MenuPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public storage: StorageProvider
+    public storage: StorageProvider,
+    public loadingCtrl: LoadingController
   ) {}
 
   ionViewDidLoad() {}

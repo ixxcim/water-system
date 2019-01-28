@@ -243,6 +243,26 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
+      receipt += "PAHINUMDUM";
+      receipt += commands.EOL;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt +=
+        "1. Palihog Bayari kining Water bill sa dili pa ang `DUE DATE` aron malikayan ang 10% nga penalty.";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt +=
+        "2. Duha ka bulan nga bill kon dili mabayaran mahimo nang putlan sa serbisyo sa tubig sa pag-abot sa CUTTING DATE.  ";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt +=
+        "3. Ang opisina DILI na modawat ug REKLAMO o COMPLAIN TULO KA ADLAW human madawat ang inyong bill sa tubig.  ";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
       receipt += commands.HORIZONTAL_LINE.HR_58MM;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_CT;
