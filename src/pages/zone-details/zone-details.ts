@@ -23,6 +23,7 @@ import { FunctionsProvider } from "./../../providers/functions/functions";
 export class ZoneDetailsPage {
   user: any;
   data: any;
+  result: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -56,12 +57,11 @@ export class ZoneDetailsPage {
 
   getUser(data) {
     this.funtion.postProblem(data).subscribe(res => {
-      this.data = res[0];
-      console.log(this.data);
+      this.result = res[0];
+      this.navCtrl.push(ZoneUserPage, {
+        user: data,
+        res: this.result[0]
+      });
     });
-    this.navCtrl.push(ZoneUserPage, {
-      user: data
-    });
-    console.log(data);
   }
 }

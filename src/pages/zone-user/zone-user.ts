@@ -23,6 +23,7 @@ import { commands } from "./../../providers/printer/printer-commands";
 })
 export class ZoneUserPage {
   user: any;
+  res: any;
   data = {};
   printed: any;
 
@@ -36,11 +37,13 @@ export class ZoneUserPage {
     private printer: PrinterProvider
   ) {
     this.user = navParams.get("user");
+    this.res = navParams.get("res");
   }
 
   ionViewDidLoad() {
     console.log(this.user.contact);
     console.log(this.user.userid);
+    console.log(this.res);
   }
 
   showToast(data) {
@@ -74,7 +77,7 @@ export class ZoneUserPage {
     this.funtion.getPrints(newData).subscribe(jhunes => {
       this.printed = jhunes[0];
 
-      console.log(this.printed[0]);
+      console.log(this.printed[0].measure);
 
       let printItem = {
         acrylic: this.printed[0].acrylic,
