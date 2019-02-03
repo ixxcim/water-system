@@ -39,7 +39,7 @@ export class ZoneUserPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.user.fname);
+    console.log(this.user.contact);
     console.log(this.user.userid);
   }
 
@@ -74,11 +74,12 @@ export class ZoneUserPage {
     this.funtion.getPrints(newData).subscribe(jhunes => {
       this.printed = jhunes[0];
 
-    //  console.log(this.printed[0].acrylic);
+      console.log(this.printed[0]);
 
       let printItem = {
         acrylic: this.printed[0].acrylic,
         description: this.printed[0].description,
+        location: this.printed[0].location,
         fname: this.printed[0].fname,
         lname: this.printed[0].lname,
         measure: this.printed[0].measure,
@@ -90,6 +91,19 @@ export class ZoneUserPage {
         meterbrand: this.printed[0].meterbrand,
         dateTime: new Date()
       };
+
+      // Calculation for after due date
+      let current_bill = printItem.measure;
+      let arrears = printItem.acrylic;
+
+      let parseBill = parseInt(current_bill);
+      let parseArrs = parseInt(arrears);
+
+      let total_bill = parseBill + parseArrs;
+
+      const after_due_date = total_bill * 0.1;
+
+      // Description
 
       // Calculate day
       let date = this.printed[0].month;
@@ -154,15 +168,15 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Address: " + printItem.location;
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
       receipt += "Meter Type: " + printItem.meterbrand;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
       receipt += "Type: " + printItem.description;
-      receipt += commands.EOL;
-      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Starting Rate: " + printItem.price + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -188,7 +202,15 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Bill Amount: " + printItem.worth + ".00";
+      receipt += "Current Bill: " + parseBill + ".00";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Arrears: " + parseArrs + ".00";
+      receipt += commands.EOL;
+      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
+      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
+      receipt += "Total Bill: " + total_bill + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -202,19 +224,11 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Penalty Amount: 5.00";
+      receipt += "Due Date: " + fullDate;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Arrears: " + printItem.acrylic + ".00";
-      receipt += commands.EOL;
-      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "OVER DUE AMOUNT: " + parseData;
-      receipt += commands.EOL;
-      receipt += commands.TEXT_FORMAT.TXT_NORMAL;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "DUE DATE: " + fullDate;
+      receipt += "After Due Date: " + after_due_date;
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -223,12 +237,6 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Note:";
-      receipt += commands.EOL;
-      receipt += commands.TEXT_FORMAT.TXT_BOLD_ON;
-      receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt +=
-        "Disconnection follows after 2 consecutive unpaid bills. TAGOLOAN WATER DISTRICT implements 2-bill Policy.";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;

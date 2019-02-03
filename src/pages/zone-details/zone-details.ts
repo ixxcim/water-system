@@ -7,6 +7,7 @@ import {
   NavController
 } from "ionic-angular";
 import { ZoneUserPage } from "./../zone-user/zone-user";
+import { FunctionsProvider } from "./../../providers/functions/functions";
 
 /**
  * Generated class for the ZoneDetailsPage page.
@@ -25,7 +26,8 @@ export class ZoneDetailsPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public funtion: FunctionsProvider
   ) {
     this.user = navParams.get("user");
     this.initializeItems();
@@ -46,13 +48,17 @@ export class ZoneDetailsPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != "") {
       this.data = this.data.filter(datas => {
-        console.log(datas.fname);
+        //  console.log(datas.fname);
         return datas.userid.toLowerCase().indexOf(val.toLowerCase()) > -1;
       });
     }
   }
 
   getUser(data) {
+    this.funtion.postProblem(data).subscribe(res => {
+      this.data = res[0];
+      console.log(this.data);
+    });
     this.navCtrl.push(ZoneUserPage, {
       user: data
     });

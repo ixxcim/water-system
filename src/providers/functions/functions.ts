@@ -48,4 +48,12 @@ export class FunctionsProvider {
       "/watersystem/index.php/Welcome/update_bill/";
     return this.http.post(url, JSON.stringify(data));
   }
+
+  public postProblem(data) {
+    let url =
+      "http://" +
+      this.localAddress +
+      "/watersystem/index.php/Welcome/display_specific_problem/";
+    return this.http.post(url, JSON.stringify(data));
+  }
 }
