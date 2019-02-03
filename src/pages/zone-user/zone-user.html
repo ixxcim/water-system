@@ -12,13 +12,13 @@
 
 <ion-content padding-right>
   <ion-list>
-    <ion-item *ngIf="!res.measure">
+    <ion-item *ngIf="!res">
       <ion-icon name="sad" item-start></ion-icon>
       <h2>No data available</h2>
       <p>Please contact to our office</p>
     </ion-item>
 
-    <ion-item *ngIf="res.measure">
+    <ion-item *ngIf="res">
       <ion-icon name="ios-contact" item-start></ion-icon>
       <h2>Date: {{ res.month }}</h2>
       <h3>Measure: {{ res.measure }}</h3>

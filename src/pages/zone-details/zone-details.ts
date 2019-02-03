@@ -4,7 +4,8 @@ import {
   Platform,
   NavParams,
   ViewController,
-  NavController
+  NavController,
+  AlertController
 } from "ionic-angular";
 import { ZoneUserPage } from "./../zone-user/zone-user";
 import { FunctionsProvider } from "./../../providers/functions/functions";
@@ -28,7 +29,8 @@ export class ZoneDetailsPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
-    public funtion: FunctionsProvider
+    public funtion: FunctionsProvider,
+    public alertCtrl: AlertController
   ) {
     this.user = navParams.get("user");
     this.initializeItems();
@@ -58,6 +60,7 @@ export class ZoneDetailsPage {
   getUser(data) {
     this.funtion.postProblem(data).subscribe(res => {
       this.result = res[0];
+
       this.navCtrl.push(ZoneUserPage, {
         user: data,
         res: this.result[0]

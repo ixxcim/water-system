@@ -43,7 +43,6 @@ export class ZoneUserPage {
   ionViewDidLoad() {
     console.log(this.user.contact);
     console.log(this.user.userid);
-    console.log(this.res);
   }
 
   showToast(data) {
@@ -77,7 +76,7 @@ export class ZoneUserPage {
     this.funtion.getPrints(newData).subscribe(jhunes => {
       this.printed = jhunes[0];
 
-      console.log(this.printed[0].measure);
+      // console.log(this.printed[0].measure);
 
       let printItem = {
         acrylic: this.printed[0].acrylic,
@@ -85,7 +84,7 @@ export class ZoneUserPage {
         location: this.printed[0].location,
         fname: this.printed[0].fname,
         lname: this.printed[0].lname,
-        measure: this.printed[0].measure,
+        // measure: this.printed[0].measure,
         month: this.printed[0].month,
         price: this.printed[0].price,
         userid: this.printed[0].userid,
@@ -96,15 +95,15 @@ export class ZoneUserPage {
       };
 
       // Calculation for after due date
-      let current_bill = printItem.measure;
+      // let current_bill = printItem.measure;
       let arrears = printItem.acrylic;
 
-      let parseBill = parseInt(current_bill);
-      let parseArrs = parseInt(arrears);
+      // let parseBill = parseInt(current_bill);
+      // let parseArrs = parseInt(arrears);
 
-      let total_bill = parseBill + parseArrs;
+      // let total_bill = parseBill + parseArrs;
 
-      const after_due_date = total_bill * 0.1;
+      // const after_due_date = total_bill * 0.1;
 
       // Description
 
@@ -197,23 +196,23 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Previous Reading: " + printItem.measure + "cm";
+      // receipt += "Previous Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Present Reading: " + printItem.measure + "cm";
+      // receipt += "Present Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Current Bill: " + parseBill + ".00";
+      // receipt += "Current Bill: " + parseBill + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Arrears: " + parseArrs + ".00";
+      // receipt += "Arrears: " + parseArrs + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Total Bill: " + total_bill + ".00";
+      // receipt += "Total Bill: " + total_bill + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -231,7 +230,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "After Due Date: " + after_due_date;
+      // receipt += "After Due Date: " + after_due_date;
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
