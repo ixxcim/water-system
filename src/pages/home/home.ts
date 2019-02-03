@@ -14,7 +14,7 @@ import { AuthenticationProvider } from "./../../providers/auth-provider/authenti
 })
 export class HomePage {
   data = {};
-  result: any;
+  logInfo: any;
   constructor(
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
@@ -41,14 +41,18 @@ export class HomePage {
     };
 
     if (userData.userid && userData.password) {
-      this.auth.postData(userData).subscribe(res => {
+      this.auth.postData(userData).subscribe(data => {
+        this.logInfo = data;
+
+        console.log(this.logInfo.result);
+
         let userInfos = {
-          userid: res.infos.userid,
-          fname: res.infos.fname,
-          lname: res.infos.lname
+          userid: this.logInfo.infos.userid,
+          fname: this.logInfo.infos.fname,
+          lname: this.logInfo.infos.lname
         };
 
-        if (res.result == "TRUE") {
+        if (this.logInfo.result == "TRUE") {
           const loader = this.loadingCtrl.create({
             content: "Logging user...",
             duration: 3000
@@ -57,8 +61,9 @@ export class HomePage {
           this.navCtrl.setRoot(MenuPage, {
             info: userInfos
           });
-          localStorage.setItem("result", res.result);
+          localStorage.setItem("userid", userInfos.userid);
         } else {
+          console.log("error");
           let alert = this.alertCtrl.create({
             title: "Login error",
             message: "Username and Password not found.",

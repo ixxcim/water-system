@@ -74,11 +74,10 @@ export class ZoneUserPage {
     this.funtion.getPrints(newData).subscribe(jhunes => {
       this.printed = jhunes[0];
 
-      console.log(this.printed[0].balance);
+    //  console.log(this.printed[0].acrylic);
 
       let printItem = {
-        balance: this.printed[0].balance,
-        count: this.printed[0].count,
+        acrylic: this.printed[0].acrylic,
         description: this.printed[0].description,
         fname: this.printed[0].fname,
         lname: this.printed[0].lname,
@@ -207,7 +206,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      receipt += "Arrears: " + printItem.balance + ".00";
+      receipt += "Arrears: " + printItem.acrylic + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;

@@ -8,7 +8,7 @@ export class AuthenticationProvider {
 
   constructor(private http: HttpClient) {}
 
-  postData(credentials) {
+  public postData(credentials) {
     let url =
       "http://" +
       this.localAddress +

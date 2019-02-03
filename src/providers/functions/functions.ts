@@ -9,7 +9,7 @@ export class FunctionsProvider {
   localAddress = localStorage.getItem("ipaddress");
   constructor(private http: HttpClient, public storage: StorageProvider) {}
 
-  displayZones(data) {
+  public displayZones(data) {
     let url =
       "http://" +
       this.localAddress +
@@ -17,7 +17,7 @@ export class FunctionsProvider {
     return this.http.post(url, JSON.stringify(data));
   }
 
-  displayPosts() {
+  public displayPosts() {
     let url =
       "http://" +
       this.localAddress +
@@ -25,7 +25,7 @@ export class FunctionsProvider {
     return this.http.get(url);
   }
 
-  getPrints(data) {
+  public getPrints(data) {
     let url =
       "http://" +
       this.localAddress +
@@ -33,7 +33,7 @@ export class FunctionsProvider {
     return this.http.post(url, JSON.stringify(data));
   }
 
-  getPayment(data) {
+  public getPayment(data) {
     let url =
       "http://" +
       this.localAddress +
@@ -41,7 +41,7 @@ export class FunctionsProvider {
     return this.http.post(url, JSON.stringify(data));
   }
 
-  updateData(data) {
+  public updateData(data) {
     let url =
       "http://" +
       this.localAddress +

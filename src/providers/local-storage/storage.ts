@@ -10,7 +10,7 @@ export class StorageProvider {
     public toastCtrl: ToastController
   ) {}
 
-  setLocalStorage() {
+  public setLocalStorage() {
     const prompt = this.alertCtrl.create({
       title: "Settings",
       message: "Change local storage IP address",
