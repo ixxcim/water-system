@@ -79,12 +79,12 @@ export class ZoneUserPage {
       // console.log(this.printed[0].measure);
 
       let printItem = {
-        acrylic: this.printed[0].acrylic,
+        // acrylic: this.printed[0].balance,
         description: this.printed[0].description,
         location: this.printed[0].location,
         fname: this.printed[0].fname,
         lname: this.printed[0].lname,
-        // measure: this.printed[0].measure,
+        measure: this.printed[0].measure,
         month: this.printed[0].month,
         price: this.printed[0].price,
         userid: this.printed[0].userid,
@@ -96,7 +96,7 @@ export class ZoneUserPage {
 
       // Calculation for after due date
       // let current_bill = printItem.measure;
-      let arrears = printItem.acrylic;
+      // let arrears = printItem.acrylic;
 
       // let parseBill = parseInt(current_bill);
       // let parseArrs = parseInt(arrears);
@@ -196,23 +196,23 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "Previous Reading: " + printItem.measure + "cm";
+      receipt += "Previous Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "Present Reading: " + printItem.measure + "cm";
+      receipt += "Present Reading: " + printItem.measure + "cm";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "Current Bill: " + parseBill + ".00";
+      receipt += "Current Bill: " + "100" + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "Arrears: " + parseArrs + ".00";
+      receipt += "Arrears: " + "100" + ".00";
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "Total Bill: " + total_bill + ".00";
+      receipt += "Total Bill: " + "100" + ".00";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
@@ -230,7 +230,7 @@ export class ZoneUserPage {
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
       receipt += commands.TEXT_FORMAT.TXT_ALIGN_LT;
-      // receipt += "After Due Date: " + after_due_date;
+      receipt += "After Due Date: " + "100";
       receipt += commands.EOL;
       receipt += commands.EOL;
       receipt += commands.TEXT_FORMAT.TXT_NORMAL;
